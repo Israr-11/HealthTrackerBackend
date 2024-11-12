@@ -1,6 +1,7 @@
 package ie.setu.config
 
 import ie.setu.controllers.HealthTrackerController
+import ie.setu.controllers.ExerciseTrackerController
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.json.JavalinJackson
@@ -43,6 +44,22 @@ class JavalinConfig {
         app.get("/api/users/email/{email}", HealthTrackerController::getUserByEmail)
         app.get("/api/users/{user-id}/activities", HealthTrackerController::getActivitiesByUserId)
         app.delete("/api/users/{user-id}/activities", HealthTrackerController::deleteActivityByUserId)
+
+        //---------------
+        // Exercise API paths
+        //---------------
+        app.get("/api/exercise-schedule", ExerciseTrackerController::getAllExerciseSchedules)
+        app.post("/api/exercise-schedule",ExerciseTrackerController::addExerciseSchedule )
+        app.delete("/api/exercise-schedule/{exercise-schedule-id}",ExerciseTrackerController::deleteExerciseSchedule)
+
+        app.get("/api/exercise-log", ExerciseTrackerController::getAllExerciseLogs)
+        app.post("/api/exercise-log",ExerciseTrackerController::addExerciseLog )
+        app.delete("/api/exercise-log/{exercise-log-id}",ExerciseTrackerController::deleteEexerciseLog)
+
+        app.get("/api/exercise-performance/{user-id}", ExerciseTrackerController::calculateAndSaveUserPerformance)
+        app.get("/api/{user-per-id}/exercise-performance/", ExerciseTrackerController::getPerformanceByUserPerId)
+        app.delete("/api/exercise-performance/{user-per-id}", ExerciseTrackerController::deleteByUserPerId)
+
 
         //---------------------
         // Activities API paths
