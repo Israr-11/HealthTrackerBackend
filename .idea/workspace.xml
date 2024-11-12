@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5a477f-7f44-4373-8657-59415ceeea61" name="Changes" comment="github actions - add kdoc comments">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ExerciseTrackerController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/exercise/ExerciseLogs.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/exercise/ExercisePerformanceTrackings.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/exercise/ExerciseSchedules.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/exercise/ExerciseLog.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/exercise/ExercisePerformanceTracking.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/exercise/ExerciseLogDAO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/exercise/ExercisePerformanceTrackingDAO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/exercise/ExerciseScheduleDAO.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/ForgotPassword.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/Role.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/exercise/ExerciseSchedule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/ForgotPasswords.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/Roles.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilities.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +230,7 @@
       <workItem from="1730228157787" duration="7377000" />
       <workItem from="1731266750360" duration="4126000" />
       <workItem from="1731310537692" duration="26487000" />
-      <workItem from="1731414374799" duration="31985000" />
+      <workItem from="1731414374799" duration="32692000" />
     </task>
     <task id="LOCAL-00001" summary="Add endpoints, get one by email, delete one, update one">
       <option name="closed" value="true" />
