@@ -3,6 +3,7 @@ package ie.setu.config
 import ie.setu.controllers.HealthTrackerController
 import ie.setu.controllers.HealthGoalTrackerController
 import ie.setu.controllers.ExerciseTrackerController
+import ie.setu.controllers.DietGoalTrackerController
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.json.JavalinJackson
@@ -70,9 +71,18 @@ class JavalinConfig {
 
         app.get("/api/health-goal-and-log/{user-id}", HealthGoalTrackerController::getHealthPerformanceByUserId)
         app.post("/api/health-goal-and-log", HealthGoalTrackerController::addHealthLogAndPerformance)
-        app.delete("/api/healtgit h-goal-and-log/{health_goal_id}", HealthGoalTrackerController::deleteByUserId)
+        app.delete("/api/health-goal-and-log/{health_goal_id}", HealthGoalTrackerController::deleteByUserId)
 
+        //---------------
+        // Feature 3: Diet Goal, Log and Performance API paths
+        //---------------
+        app.get("/api/diet-goal", DietGoalTrackerController::getAllDietGoal)
+        app.post("/api/diet-goal",DietGoalTrackerController::addDietGoal)
+        app.patch("/api/diet-goal/{diet-goal-id}", DietGoalTrackerController::updateDietGoalByGoalId)
 
+        app.get("/api/diet-goal-and-log/{user-id}", DietGoalTrackerController::getDietPerformanceByUserId)
+        app.post("/api/diet-goal-and-log", DietGoalTrackerController::addDietLogAndPerformance)
+        app.delete("/api/diet-goal-and-log/{diet_goal_id}", DietGoalTrackerController::deleteByUserId)
         //---------------------
         // Activities API paths
         //---------------------

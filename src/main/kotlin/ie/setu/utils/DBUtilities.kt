@@ -14,6 +14,10 @@ import ie.setu.domain.health.HealthGoal
 import ie.setu.domain.health.HealthGoalLogAndPerformance
 import ie.setu.domain.db.health.HealthGoals
 import ie.setu.domain.db.health.HealthGoalLogAndPerformances
+import ie.setu.domain.db.diet.DietGoals
+import ie.setu.domain.db.diet.DietGoalLogAndPerformances
+import ie.setu.domain.diet.DietGoal
+import ie.setu.domain.diet.DietGoalLogAndPerformance
 
 import kotlinx.serialization.json.Json
 
@@ -81,4 +85,23 @@ fun mapToHealthGoalLogAndPerformance(it: ResultRow) = HealthGoalLogAndPerformanc
     entryTime = it[HealthGoalLogAndPerformances.entryTime],
 )
 
+fun mapToDietGoal(it: ResultRow) = DietGoal(
+    id = it[DietGoals.id],
+    userId = it[DietGoals.userId],
+    dietGoalType = it[DietGoals.dietGoalType],
+    targetCalories = it[DietGoals.targetCalories],
+    entryTime = it[DietGoals.entryTime]
+)
+
+fun mapToDietGoalLogAndPerformance(it: ResultRow) = DietGoalLogAndPerformance(
+    id = it[DietGoalLogAndPerformances.id],
+    userId = it[DietGoalLogAndPerformances.userId],
+    dietGoalId = it[DietGoalLogAndPerformances.dietGoalId],
+    entryTime = it[DietGoalLogAndPerformances.entryTime],
+    caloriesConsumed = it[DietGoalLogAndPerformances.caloriesConsumed],
+    recommendations = it[DietGoalLogAndPerformances.recommendations],
+    status = it[DietGoalLogAndPerformances.status],
+    targetReached = it[DietGoalLogAndPerformances.targetReached],
+    deficitSurplus = it[DietGoalLogAndPerformances.deficitSurplus]
+)
 
