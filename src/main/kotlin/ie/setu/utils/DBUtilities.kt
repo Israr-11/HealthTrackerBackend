@@ -10,6 +10,11 @@ import ie.setu.domain.exercise.ExerciseLog
 import ie.setu.domain.db.exercise.ExerciseLogs
 import ie.setu.domain.db.exercise.ExerciseSchedules
 import ie.setu.domain.exercise.ExercisePerformanceTracking
+import ie.setu.domain.health.HealthGoal
+import ie.setu.domain.health.HealthGoalLogAndPerformance
+import ie.setu.domain.db.health.HealthGoals
+import ie.setu.domain.db.health.HealthGoalLogAndPerformances
+
 import kotlinx.serialization.json.Json
 
 import org.jetbrains.exposed.sql.ResultRow
@@ -56,4 +61,24 @@ fun mapToExercisePerformanceTracking(it: ResultRow) = ExercisePerformanceTrackin
     missCount=it[ExercisePerformanceTrackings.missCount],
     checkedAt = it[ExercisePerformanceTrackings.checkedAt],
 )
+
+fun mapToHealthGoal(it: ResultRow) = HealthGoal(
+    id=it[HealthGoals.id],
+    userId = it[HealthGoals.userId],
+    healthGoalType=it[HealthGoals.healthGoalType],
+    targetValue =it[HealthGoals.targetValue],
+    entryTime = it[HealthGoals.entryTime],
+)
+
+fun mapToHealthGoalLogAndPerformance(it: ResultRow) = HealthGoalLogAndPerformance(
+    id=it[HealthGoalLogAndPerformances.id],
+    userId = it[HealthGoalLogAndPerformances.userId],
+    healthGoalId =it[HealthGoalLogAndPerformances.healthGoalId],
+   achievedValue = it[HealthGoalLogAndPerformances.achievedValue],
+    status = it[HealthGoalLogAndPerformances.status],
+    targetReached = it[HealthGoalLogAndPerformances.targetReached],
+    remarks = it[HealthGoalLogAndPerformances.remarks],
+    entryTime = it[HealthGoalLogAndPerformances.entryTime],
+)
+
 

@@ -1,6 +1,7 @@
 package ie.setu.config
 
 import ie.setu.controllers.HealthTrackerController
+import ie.setu.controllers.HealthGoalTrackerController
 import ie.setu.controllers.ExerciseTrackerController
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
@@ -46,7 +47,7 @@ class JavalinConfig {
         app.delete("/api/users/{user-id}/activities", HealthTrackerController::deleteActivityByUserId)
 
         //---------------
-        // Exercise API paths
+        // Feature 1: Exercise API paths
         //---------------
         app.get("/api/exercise-schedule", ExerciseTrackerController::getAllExerciseSchedules)
         app.post("/api/exercise-schedule",ExerciseTrackerController::addExerciseSchedule )
@@ -59,6 +60,17 @@ class JavalinConfig {
         app.get("/api/exercise-performance/{user-id}", ExerciseTrackerController::calculateAndSaveUserPerformance)
         app.get("/api/{user-per-id}/exercise-performance/", ExerciseTrackerController::getPerformanceByUserPerId)
         app.delete("/api/exercise-performance/{user-per-id}", ExerciseTrackerController::deleteByUserPerId)
+
+        //---------------
+        // Feature 2: Health Goal, Log and Performance API paths
+        //---------------
+        app.get("/api/health-goal", HealthGoalTrackerController::getAllHealthGoal)
+        app.post("/api/health-goal",HealthGoalTrackerController::addHealthGoal)
+        app.patch("/api/health-goal/{health-goal-id}", HealthGoalTrackerController::updateHealthGoalByGoalId)
+
+        app.get("/api/health-goal-and-log/{user-id}", HealthGoalTrackerController::getHealthPerformanceByUserId)
+        app.post("/api/health-goal-and-log", HealthGoalTrackerController::addHealthLogAndPerformance)
+        app.delete("/api/healtgit h-goal-and-log/{health_goal_id}", HealthGoalTrackerController::deleteByUserId)
 
 
         //---------------------

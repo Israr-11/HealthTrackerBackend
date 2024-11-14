@@ -4,7 +4,7 @@ import ie.setu.domain.db.Users
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.jodatime.datetime
 
-object HealthGoal: Table("health_goal") {
+object HealthGoals: Table("health_goals") {
     val id = integer("id").autoIncrement()
     val userId = integer("user_id").references(Users.id)
     val healthGoalType = varchar("health_goal_type", 50)
