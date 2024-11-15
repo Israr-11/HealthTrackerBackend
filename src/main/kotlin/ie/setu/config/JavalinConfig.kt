@@ -4,6 +4,7 @@ import ie.setu.controllers.HealthTrackerController
 import ie.setu.controllers.HealthGoalTrackerController
 import ie.setu.controllers.ExerciseTrackerController
 import ie.setu.controllers.DietGoalTrackerController
+import ie.setu.controllers.SleepGoalTrackerController
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.json.JavalinJackson
@@ -83,7 +84,20 @@ class JavalinConfig {
         app.get("/api/diet-goal-and-log/{user-id}", DietGoalTrackerController::getDietPerformanceByUserId)
         app.post("/api/diet-goal-and-log", DietGoalTrackerController::addDietLogAndPerformance)
         app.delete("/api/diet-goal-and-log/{diet_goal_id}", DietGoalTrackerController::deleteByUserId)
+
+        //---------------
+        // Feature 4: Sleep Goal, Log and Stats API paths
+        //---------------
+        app.get("/api/sleep-goal", SleepGoalTrackerController::getAllSleepGoal)
+        app.post("/api/sleep-goal",SleepGoalTrackerController::addSleepGoal)
+        app.patch("/api/sleep-goal/{sleep-goal-id}", SleepGoalTrackerController::updateSleepGoalByGoalId)
+
+        app.get("/api/sleep-goal-and-stats/{user-id}", SleepGoalTrackerController::getSleepLogAndStatByUserId)
+        app.post("/api/sleep-goal-and-stats", SleepGoalTrackerController::addSleepLogAndStat)
+        app.delete("/api/sleep-goal-and-stats/{sleep_goal_id}", SleepGoalTrackerController::deleteByUserId)
         //---------------------
+
+
         // Activities API paths
         //---------------------
         app.get("/api/activities", HealthTrackerController::getAllActivities)

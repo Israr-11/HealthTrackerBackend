@@ -18,6 +18,10 @@ import ie.setu.domain.db.diet.DietGoals
 import ie.setu.domain.db.diet.DietGoalLogAndPerformances
 import ie.setu.domain.diet.DietGoal
 import ie.setu.domain.diet.DietGoalLogAndPerformance
+import ie.setu.domain.sleep.SleepGoal
+import ie.setu.domain.sleep.SleepGoalLogAndStat
+import ie.setu.domain.db.sleep.SleepGoals
+import ie.setu.domain.db.sleep.SleepGoalLogAndStats
 
 import kotlinx.serialization.json.Json
 
@@ -105,3 +109,25 @@ fun mapToDietGoalLogAndPerformance(it: ResultRow) = DietGoalLogAndPerformance(
     deficitSurplus = it[DietGoalLogAndPerformances.deficitSurplus]
 )
 
+fun mapToSleepGoal(row: ResultRow) = SleepGoal(
+    id = row[SleepGoals.id],
+    userId = row[SleepGoals.userId],
+    targetSleepHours = row[SleepGoals.targetSleepHours],
+    targetSleepQuality = row[SleepGoals.targetSleepQuality],
+    targetSleepTiming = row[SleepGoals.targetSleepTiming],
+    entryTime = row[SleepGoals.entryTime]
+)
+
+fun mapToSleepGoalLogAndStat(row: ResultRow) = SleepGoalLogAndStat(
+    id = row[SleepGoalLogAndStats.id],
+    userId = row[SleepGoalLogAndStats.userId],
+    sleepGoalId = row[SleepGoalLogAndStats.sleepGoalId],
+    entryTime = row[SleepGoalLogAndStats.entryTime],
+    actualSleepHours = row[SleepGoalLogAndStats.actualSleepHours],
+    actualSleepQuality = row[SleepGoalLogAndStats.actualSleepQuality],
+    actualSleepTiming = row[SleepGoalLogAndStats.actualSleepTiming ],
+    sleepInterruptions = row[SleepGoalLogAndStats.sleepInterruptions],
+    sleepPhaseDetails = row[SleepGoalLogAndStats.sleepPhaseDetails],
+    sleepQualityIndex = row[SleepGoalLogAndStats.sleepQualityIndex],
+    remarks = row[SleepGoalLogAndStats.remarks]
+)
