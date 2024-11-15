@@ -22,6 +22,12 @@ import ie.setu.domain.sleep.SleepGoal
 import ie.setu.domain.sleep.SleepGoalLogAndStat
 import ie.setu.domain.db.sleep.SleepGoals
 import ie.setu.domain.db.sleep.SleepGoalLogAndStats
+import ie.setu.domain.screentime.ScreenTimeGoal
+import ie.setu.domain.screentime.ScreenTimeLogAndPerformance
+import ie.setu.domain.db.screentime.ScreenTimeGoals
+import ie.setu.domain.db.screentime.ScreenTimeLogAndPerformances
+
+
 
 import kotlinx.serialization.json.Json
 
@@ -130,4 +136,22 @@ fun mapToSleepGoalLogAndStat(row: ResultRow) = SleepGoalLogAndStat(
     sleepPhaseDetails = row[SleepGoalLogAndStats.sleepPhaseDetails],
     sleepQualityIndex = row[SleepGoalLogAndStats.sleepQualityIndex],
     remarks = row[SleepGoalLogAndStats.remarks]
+)
+
+fun mapToScreenTimeGoal(row: ResultRow) = ScreenTimeGoal(
+    id = row[ScreenTimeGoals.id],
+    userId = row[ScreenTimeGoals.userId],
+    targetScreenHours  = row[ScreenTimeGoals.targetScreenHours ],
+    entryTime = row[ScreenTimeGoals.entryTime]
+)
+
+fun mapToScreenTimeLogAndPerformance(row: ResultRow) = ScreenTimeLogAndPerformance (
+        id = row[ScreenTimeLogAndPerformances.id],
+        userId = row[ScreenTimeLogAndPerformances.userId],
+        screenTimeGoalId = row[ScreenTimeLogAndPerformances.screenTimeGoalId],
+        actualScreenHours = row[ScreenTimeLogAndPerformances.actualScreenHours],
+        targetMet = row[ScreenTimeLogAndPerformances.targetMet],
+        extraHours = row[ScreenTimeLogAndPerformances.extraHours],
+        recommendations = row[ScreenTimeLogAndPerformances.recommendations],
+        entryTime = row[ScreenTimeLogAndPerformances.entryTime]
 )

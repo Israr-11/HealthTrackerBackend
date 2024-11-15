@@ -5,6 +5,7 @@ import ie.setu.controllers.HealthGoalTrackerController
 import ie.setu.controllers.ExerciseTrackerController
 import ie.setu.controllers.DietGoalTrackerController
 import ie.setu.controllers.SleepGoalTrackerController
+import ie.setu.controllers.ScreenTimeTrackerController
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.json.JavalinJackson
@@ -96,7 +97,16 @@ class JavalinConfig {
         app.post("/api/sleep-goal-and-stats", SleepGoalTrackerController::addSleepLogAndStat)
         app.delete("/api/sleep-goal-and-stats/{sleep_goal_id}", SleepGoalTrackerController::deleteByUserId)
         //---------------------
+        //---------------
+        // Feature 5: Screen Time Goal, Log and Performance API paths
+        //---------------
+        app.post("/api/screen-time-goal", ScreenTimeTrackerController::addScreenTimeGoal)
+        app.get("/api/screen-time-goal",ScreenTimeTrackerController::getAllScreenTimeGoal)
+        app.patch("/api/screen-time-goal/{screen-time-goal-id}", ScreenTimeTrackerController::updateScreenTimeGoalByGoalId)
 
+        app.get("/api/screen-time-goal-and-log/{user-id}", ScreenTimeTrackerController::getScreenTimePerformanceByUserId)
+        app.post("/api/screen-time-goal-and-log", ScreenTimeTrackerController::addScreenTimeLogAndPerformance)
+        app.delete("/api/screen-time-goal-and-log/{screen_time_goal_id}", ScreenTimeTrackerController::deleteByScreenTimeGoalId)
 
         // Activities API paths
         //---------------------
