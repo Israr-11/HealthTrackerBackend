@@ -3,10 +3,8 @@ package ie.setu.repository.health
 
 import ie.setu.domain.repository.health.HealthGoalLogAndPerformanceDAO
 import ie.setu.helpers.*
-
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.transactions.transaction
-import org.joda.time.DateTime
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Nested

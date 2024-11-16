@@ -1,6 +1,5 @@
 package ie.setu.repository.exercise
 
-import ie.setu.domain.exercise.ExerciseSchedule
 import ie.setu.domain.db.exercise.ExerciseSchedules
 import ie.setu.domain.repository.exercise.ExerciseScheduleDAO
 import ie.setu.helpers.populateExerciseScheduleTable

@@ -3,10 +3,8 @@ package ie.setu.repository.diet
 
 import ie.setu.domain.repository.diet.DietGoalLogAndPerformanceDAO
 import ie.setu.helpers.*
-
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.transactions.transaction
-import org.joda.time.DateTime
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Nested
