@@ -5,13 +5,13 @@ Welcome to the HealthTracker Backend! This is the server-side application for a 
 So far, it comprises five features: activity, health, diet, sleep, and screen time. It allows users to set goals, log achieved goals, track performance, and get personalized suggestions.
 
 ## Tech Stack
-# Framework: 
+### Framework: 
 Javalin (Kotlin-based)
-# Database
+### Database
 PostgreSQL
-# ORM
+### ORM
 Exposed ORM for database management
-# Build Tool
+### Build Tool
 Maven
 
 
