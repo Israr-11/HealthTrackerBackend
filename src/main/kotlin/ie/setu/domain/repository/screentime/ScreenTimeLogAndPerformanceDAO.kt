@@ -3,7 +3,6 @@ package ie.setu.domain.repository.screentime
 import ie.setu.domain.screentime.ScreenTimeLogAndPerformance
 import ie.setu.domain.db.screentime.ScreenTimeLogAndPerformances
 import ie.setu.domain.db.screentime.ScreenTimeGoals
-
 import ie.setu.utils.mapToScreenTimeLogAndPerformance
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction

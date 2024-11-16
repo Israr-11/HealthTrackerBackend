@@ -3,7 +3,6 @@ package ie.setu.domain.repository.diet
 import ie.setu.domain.diet.DietGoalLogAndPerformance
 import ie.setu.domain.db.diet.DietGoalLogAndPerformances
 import ie.setu.domain.db.diet.DietGoals
-
 import ie.setu.utils.mapToDietGoalLogAndPerformance
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction

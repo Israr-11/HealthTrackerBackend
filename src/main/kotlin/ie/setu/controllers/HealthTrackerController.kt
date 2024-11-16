@@ -1,18 +1,13 @@
 package ie.setu.controllers
 
-import ie.setu.domain.Activity
 import ie.setu.domain.health.HealthGoal
 import ie.setu.domain.health.HealthGoalLogAndPerformance
-
 import ie.setu.domain.repository.health.HealthGoalDAO
 import ie.setu.domain.repository.health.HealthGoalLogAndPerformanceDAO
-import ie.setu.utils.jsonObjectMapper
 import ie.setu.utils.jsonToObject
-import io.github.oshai.kotlinlogging.KotlinLogging
 import io.javalin.http.Context
 
-
-object HealthGoalTrackerController {
+object HealthTrackerController {
     private val healthGoalDAO = HealthGoalDAO()
     private val healthlogAndPerformanceDAO = HealthGoalLogAndPerformanceDAO()
 

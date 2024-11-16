@@ -1,5 +1,3 @@
-
-
 package ie.setu.domain.repository.exercise
 
 import ie.setu.domain.exercise.ExerciseSchedule

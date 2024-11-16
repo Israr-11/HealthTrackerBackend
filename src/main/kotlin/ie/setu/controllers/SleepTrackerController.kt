@@ -9,7 +9,7 @@ import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
 
 
-object SleepGoalTrackerController {
+object SleepTrackerController {
     private val sleepGoalDAO = SleepGoalDAO()
     private val sleepGoalLogAndStatDAO = SleepGoalLogAndStatsDAO()
 

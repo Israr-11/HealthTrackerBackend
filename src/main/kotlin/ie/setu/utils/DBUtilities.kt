@@ -1,8 +1,6 @@
 package ie.setu.utils
 
-import ie.setu.domain.Activity
 import ie.setu.domain.User
-import ie.setu.domain.db.Activities
 import ie.setu.domain.db.exercise.ExercisePerformanceTrackings
 import ie.setu.domain.db.Users
 import ie.setu.domain.exercise.ExerciseSchedule
@@ -26,27 +24,12 @@ import ie.setu.domain.screentime.ScreenTimeGoal
 import ie.setu.domain.screentime.ScreenTimeLogAndPerformance
 import ie.setu.domain.db.screentime.ScreenTimeGoals
 import ie.setu.domain.db.screentime.ScreenTimeLogAndPerformances
-
-
-
-import kotlinx.serialization.json.Json
-
 import org.jetbrains.exposed.sql.ResultRow
-import org.joda.time.DateTime
 
 fun mapToUser(it: ResultRow) = User(
     id = it[Users.id],
     name = it[Users.name],
     email = it[Users.email]
-)
-
-fun mapToActivity(it: ResultRow) = Activity(
-    id = it[Activities.id],
-    description = it[Activities.description],
-    duration = it[Activities.duration],
-    started = it[Activities.started],
-    calories = it[Activities.calories],
-    userId = it[Activities.userId]
 )
 
 fun mapToExerciseSchedule(it: ResultRow) = ExerciseSchedule(

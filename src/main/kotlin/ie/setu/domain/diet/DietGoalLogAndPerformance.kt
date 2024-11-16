@@ -12,5 +12,4 @@ data class DietGoalLogAndPerformance(
     var targetReached: Boolean?,
     var deficitSurplus: String?,
     var entryTime: DateTime?,
-
     )

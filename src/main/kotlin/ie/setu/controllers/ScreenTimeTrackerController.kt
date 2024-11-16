@@ -1,13 +1,11 @@
 package ie.setu.controllers
 
 import ie.setu.domain.screentime.ScreenTimeGoal
-
 import ie.setu.domain.repository.screentime.ScreenTimeGoalDAO
 import ie.setu.domain.repository.screentime.ScreenTimeLogAndPerformanceDAO
 import ie.setu.domain.screentime.ScreenTimeLogAndPerformance
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
-
 
 object ScreenTimeTrackerController {
     private val screenTimeGoalDAO = ScreenTimeGoalDAO()

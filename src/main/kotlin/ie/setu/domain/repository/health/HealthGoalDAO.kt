@@ -1,18 +1,12 @@
 
 package ie.setu.domain.repository.health
 
-import ie.setu.domain.Activity
-import ie.setu.domain.db.Activities
-import ie.setu.domain.db.health.HealthGoalLogAndPerformances
 import ie.setu.domain.health.HealthGoal
 import ie.setu.domain.db.health.HealthGoals
 import ie.setu.utils.mapToHealthGoal
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
-import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.jodatime.datetime
 import org.jetbrains.exposed.sql.update
 import org.joda.time.DateTime
 
@@ -57,8 +51,4 @@ class HealthGoalDAO {
             }
         }
     }
-
-
-
-
 }

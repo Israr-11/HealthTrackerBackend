@@ -1,7 +1,6 @@
 package ie.setu.domain.db.exercise
 
 import ie.setu.domain.db.Users
-
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.jodatime.datetime
 

@@ -3,14 +3,12 @@ package ie.setu.domain.repository.health
 import ie.setu.domain.health.HealthGoalLogAndPerformance
 import ie.setu.domain.db.health.HealthGoalLogAndPerformances
 import ie.setu.domain.db.health.HealthGoals
-
 import ie.setu.utils.mapToHealthGoalLogAndPerformance
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.jodatime.datetime
 import org.joda.time.DateTime
 
 

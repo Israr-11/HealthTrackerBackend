@@ -1,15 +1,14 @@
 package ie.setu.config
 
+import ie.setu.controllers.UserController
 import ie.setu.controllers.HealthTrackerController
-import ie.setu.controllers.HealthGoalTrackerController
 import ie.setu.controllers.ExerciseTrackerController
-import ie.setu.controllers.DietGoalTrackerController
-import ie.setu.controllers.SleepGoalTrackerController
+import ie.setu.controllers.DietTrackerController
+import ie.setu.controllers.SleepTrackerController
 import ie.setu.controllers.ScreenTimeTrackerController
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.json.JavalinJackson
-import io.javalin.vue.VueComponent
 
 class JavalinConfig {
 
@@ -38,17 +37,11 @@ class JavalinConfig {
         //---------------
         // User API paths
         //---------------
-        app.get("/api/users", HealthTrackerController::getAllUsers)
-        app.get("/api/users/{user-id}", HealthTrackerController::getUserByUserId)
-
-        app.post("/api/users", HealthTrackerController::addUser)
-        app.delete("/api/users/{user-id}", HealthTrackerController::deleteUser)
-        app.patch("/api/users/{user-id}", HealthTrackerController::updateUser)
-
-        app.get("/api/users/email/{email}", HealthTrackerController::getUserByEmail)
-        app.get("/api/users/{user-id}/activities", HealthTrackerController::getActivitiesByUserId)
-        app.delete("/api/users/{user-id}/activities", HealthTrackerController::deleteActivityByUserId)
-
+        app.get("/api/users", UserController::getAllUsers)
+        app.get("/api/users/{user-id}", UserController::getUserByUserId)
+        app.post("/api/users", UserController::addUser)
+        app.delete("/api/users/{user-id}", UserController::deleteUser)
+        app.patch("/api/users/{user-id}", UserController::updateUser)
         //---------------
         // Feature 1: Exercise API paths
         //---------------
@@ -67,35 +60,35 @@ class JavalinConfig {
         //---------------
         // Feature 2: Health Goal, Log and Performance API paths
         //---------------
-        app.get("/api/health-goal", HealthGoalTrackerController::getAllHealthGoal)
-        app.post("/api/health-goal",HealthGoalTrackerController::addHealthGoal)
-        app.patch("/api/health-goal/{health-goal-id}", HealthGoalTrackerController::updateHealthGoalByGoalId)
+        app.get("/api/health-goal", HealthTrackerController::getAllHealthGoal)
+        app.post("/api/health-goal",HealthTrackerController::addHealthGoal)
+        app.patch("/api/health-goal/{health-goal-id}", HealthTrackerController::updateHealthGoalByGoalId)
 
-        app.get("/api/health-goal-and-log/{user-id}", HealthGoalTrackerController::getHealthPerformanceByUserId)
-        app.post("/api/health-goal-and-log", HealthGoalTrackerController::addHealthLogAndPerformance)
-        app.delete("/api/health-goal-and-log/{health_goal_id}", HealthGoalTrackerController::deleteByUserId)
+        app.get("/api/health-goal-and-log/{user-id}", HealthTrackerController::getHealthPerformanceByUserId)
+        app.post("/api/health-goal-and-log", HealthTrackerController::addHealthLogAndPerformance)
+        app.delete("/api/health-goal-and-log/{health_goal_id}", HealthTrackerController::deleteByUserId)
 
         //---------------
         // Feature 3: Diet Goal, Log and Performance API paths
         //---------------
-        app.get("/api/diet-goal", DietGoalTrackerController::getAllDietGoal)
-        app.post("/api/diet-goal",DietGoalTrackerController::addDietGoal)
-        app.patch("/api/diet-goal/{diet-goal-id}", DietGoalTrackerController::updateDietGoalByGoalId)
+        app.get("/api/diet-goal", DietTrackerController::getAllDietGoal)
+        app.post("/api/diet-goal",DietTrackerController::addDietGoal)
+        app.patch("/api/diet-goal/{diet-goal-id}", DietTrackerController::updateDietGoalByGoalId)
 
-        app.get("/api/diet-goal-and-log/{user-id}", DietGoalTrackerController::getDietPerformanceByUserId)
-        app.post("/api/diet-goal-and-log", DietGoalTrackerController::addDietLogAndPerformance)
-        app.delete("/api/diet-goal-and-log/{diet_goal_id}", DietGoalTrackerController::deleteByUserId)
+        app.get("/api/diet-goal-and-log/{user-id}", DietTrackerController::getDietPerformanceByUserId)
+        app.post("/api/diet-goal-and-log", DietTrackerController::addDietLogAndPerformance)
+        app.delete("/api/diet-goal-and-log/{diet_goal_id}", DietTrackerController::deleteByUserId)
 
         //---------------
         // Feature 4: Sleep Goal, Log and Stats API paths
         //---------------
-        app.get("/api/sleep-goal", SleepGoalTrackerController::getAllSleepGoal)
-        app.post("/api/sleep-goal",SleepGoalTrackerController::addSleepGoal)
-        app.patch("/api/sleep-goal/{sleep-goal-id}", SleepGoalTrackerController::updateSleepGoalByGoalId)
+        app.get("/api/sleep-goal", SleepTrackerController::getAllSleepGoal)
+        app.post("/api/sleep-goal",SleepTrackerController::addSleepGoal)
+        app.patch("/api/sleep-goal/{sleep-goal-id}", SleepTrackerController::updateSleepGoalByGoalId)
 
-        app.get("/api/sleep-goal-and-stats/{user-id}", SleepGoalTrackerController::getSleepLogAndStatByUserId)
-        app.post("/api/sleep-goal-and-stats", SleepGoalTrackerController::addSleepLogAndStat)
-        app.delete("/api/sleep-goal-and-stats/{sleep_goal_id}", SleepGoalTrackerController::deleteByUserId)
+        app.get("/api/sleep-goal-and-stats/{user-id}", SleepTrackerController::getSleepLogAndStatByUserId)
+        app.post("/api/sleep-goal-and-stats", SleepTrackerController::addSleepLogAndStat)
+        app.delete("/api/sleep-goal-and-stats/{sleep_goal_id}", SleepTrackerController::deleteByUserId)
         //---------------------
         //---------------
         // Feature 5: Screen Time Goal, Log and Performance API paths
@@ -108,24 +101,6 @@ class JavalinConfig {
         app.post("/api/screen-time-goal-and-log", ScreenTimeTrackerController::addScreenTimeLogAndPerformance)
         app.delete("/api/screen-time-goal-and-log/{screen_time_goal_id}", ScreenTimeTrackerController::deleteByScreenTimeGoalId)
 
-        // Activities API paths
-        //---------------------
-        app.get("/api/activities", HealthTrackerController::getAllActivities)
-        app.post("/api/activities", HealthTrackerController::addActivity)
-
-        app.delete("/api/activities/{activity-id}", HealthTrackerController::deleteActivityByActivityId)
-        app.patch("/api/activities/{activity-id}", HealthTrackerController::updateActivity)
-
-        app.get("/api/activities/{activity-id}", HealthTrackerController::getActivitiesByActivityId)
-
-
-        // The @routeComponent that we added in layout.html earlier will be replaced
-        // by the String inside the VueComponent. This means a call to / will load
-        // the layout and display our <home-page> component.
-        app.get("/", VueComponent("<home-page></home-page>"))
-        app.get("/users", VueComponent("<user-overview></user-overview>"))
-        app.get("/users/{user-id}", VueComponent("<user-profile></user-profile>"))
-        app.get("/users/{user-id}/activities", VueComponent("<user-activity-overview></user-activity-overview>"))
     }
 
     private fun getRemoteAssignedPort(): Int {

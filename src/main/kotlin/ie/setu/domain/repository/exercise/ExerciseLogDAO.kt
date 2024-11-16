@@ -1,11 +1,7 @@
-
-
 package ie.setu.domain.repository.exercise
 
-import ie.setu.domain.db.Users
 import ie.setu.domain.exercise.ExerciseLog
 import ie.setu.domain.db.exercise.ExerciseLogs
-import ie.setu.domain.db.exercise.ExerciseSchedules
 import ie.setu.utils.mapToExerciseLog
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction

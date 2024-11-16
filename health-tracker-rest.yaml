@@ -3,9 +3,6 @@ info:
   version: 1.0.0
   title: Health Tracker API
   description: This API provides endpoints for handling CRUD operations on the Health Tracker data.
-  contact:
-    name: Siobhan Drohan 
-    email: siobhan.drohan@setu.ie
 paths:
   /api/users/{user-id}:
     get:

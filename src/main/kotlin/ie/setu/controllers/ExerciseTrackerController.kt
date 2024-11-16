@@ -2,13 +2,10 @@ package ie.setu.controllers
 
 import ie.setu.domain.exercise.ExerciseLog
 import ie.setu.domain.exercise.ExerciseSchedule
-
 import ie.setu.domain.repository.exercise.ExerciseLogDAO
 import ie.setu.domain.repository.exercise.ExercisePerformanceTrackingDAO
 import ie.setu.domain.repository.exercise.ExerciseScheduleDAO
-import ie.setu.utils.jsonObjectMapper
 import ie.setu.utils.jsonToObject
-import io.github.oshai.kotlinlogging.KotlinLogging
 import io.javalin.http.Context
 
 
@@ -93,8 +90,6 @@ object ExerciseTrackerController {
 
     fun calculateAndSaveUserPerformance(ctx: Context) {
         val userId = ctx.pathParam("user-id").toInt()
-
-        // Calculate user performance based on logs using userId
         exercisePerformanceTrackingDAO.calculateUserPerformance(userId)
 
         ctx.status(201)
@@ -119,9 +114,5 @@ object ExerciseTrackerController {
         else
             ctx.status(404)
     }
-
-
 }
-
-    //Controller for performance
 

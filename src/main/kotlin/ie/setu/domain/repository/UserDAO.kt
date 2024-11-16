@@ -10,9 +10,6 @@ import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.update
 
-/**
- * Manages the database transactions and returns the results of the transactions
- */
 class UserDAO {
 
     fun getAll(): ArrayList<User> {

@@ -1,4 +1,3 @@
-
 package ie.setu.domain.repository.sleep
 
 import ie.setu.domain.sleep.SleepGoal

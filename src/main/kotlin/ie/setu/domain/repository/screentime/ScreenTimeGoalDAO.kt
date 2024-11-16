@@ -1,4 +1,3 @@
-
 package ie.setu.domain.repository.screentime
 
 import ie.setu.domain.db.screentime.ScreenTimeGoals

@@ -3,7 +3,6 @@ package ie.setu.domain.repository.sleep
 import ie.setu.domain.sleep.SleepGoalLogAndStat
 import ie.setu.domain.db.sleep.SleepGoalLogAndStats
 import ie.setu.domain.db.sleep.SleepGoals
-
 import ie.setu.utils.mapToSleepGoalLogAndStat
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
