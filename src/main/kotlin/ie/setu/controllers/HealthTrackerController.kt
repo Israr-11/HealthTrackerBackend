@@ -1,153 +1,101 @@
 package ie.setu.controllers
 
 import ie.setu.domain.Activity
-import ie.setu.domain.User
-import ie.setu.domain.repository.ActivityDAO
-import ie.setu.domain.repository.UserDAO
+import ie.setu.domain.health.HealthGoal
+import ie.setu.domain.health.HealthGoalLogAndPerformance
+
+import ie.setu.domain.repository.health.HealthGoalDAO
+import ie.setu.domain.repository.health.HealthGoalLogAndPerformanceDAO
 import ie.setu.utils.jsonObjectMapper
 import ie.setu.utils.jsonToObject
 import io.github.oshai.kotlinlogging.KotlinLogging
 import io.javalin.http.Context
 
 
-object HealthTrackerController {
+object HealthGoalTrackerController {
+    private val healthGoalDAO = HealthGoalDAO()
+    private val healthlogAndPerformanceDAO = HealthGoalLogAndPerformanceDAO()
 
-    private val userDao = UserDAO()
-    private val activityDAO = ActivityDAO()
+    //Health Goal Controllers
 
-    fun getAllUsers(ctx: Context) {
-        val users = userDao.getAll()
-        if (users.size != 0) {
+    fun getAllHealthGoal(ctx: Context) {
+        val goal = healthGoalDAO.getAll()
+        if (goal.size != 0) {
             ctx.status(200)
-        }
-        else{
+        } else {
             ctx.status(404)
         }
-        ctx.json(users)
+        ctx.json(goal)
     }
 
-    fun getUserByUserId(ctx: Context) {
-        val user = userDao.findById(ctx.pathParam("user-id").toInt())
-        if (user != null) {
-            ctx.json(user)
-            ctx.status(200)
-        }
-        else{
-            ctx.status(404)
-        }
-    }
 
-    fun getUserByEmail(ctx: Context) {
-        val user = userDao.findByEmail(ctx.pathParam("email"))
-        if (user != null) {
-            ctx.json(user)
-            ctx.status(200)
-        }
-        else{
-            ctx.status(404)
-        }
-    }
-
-    fun addUser(ctx: Context) {
-        val user : User = jsonToObject(ctx.body())
-        val userId = userDao.save(user)
-        if (userId != null) {
-            user.id = userId
-            ctx.json(user)
+    fun addHealthGoal(ctx: Context) {
+        val health_goal: HealthGoal = jsonToObject(ctx.body())
+        val healthGoalId = healthGoalDAO.save(health_goal)
+        if (healthGoalId != null) {
+            health_goal.id = healthGoalId
+            ctx.json(
+                mapOf(
+                    "id" to health_goal.id,
+                    "userId" to health_goal.userId,
+                    "healthGoalType" to health_goal.healthGoalType,
+                    "targetValue" to health_goal.targetValue,
+                )
+            )
             ctx.status(201)
         }
     }
 
-    fun deleteUser(ctx: Context){
-        if (userDao.delete(ctx.pathParam("user-id").toInt()) != 0)
+        fun updateHealthGoalByGoalId(ctx: Context){
+        val healthgoal : HealthGoal = jsonToObject(ctx.body())
+        if (healthGoalDAO.updateByHealthGoalId(
+                healthGoalId = ctx.pathParam("health-goal-id").toInt(),
+                healthGoalToUpdate = healthgoal) != 0)
             ctx.status(204)
         else
             ctx.status(404)
     }
 
-    fun updateUser(ctx: Context){
-        val foundUser : User = jsonToObject(ctx.body())
-        if ((userDao.update(id = ctx.pathParam("user-id").toInt(), user=foundUser)) != 0)
-            ctx.status(204)
-        else
-            ctx.status(404)
-    }
 
-    //--------------------------------------------------------------
-    // ActivityDAO specifics
-    //-------------------------------------------------------------
+    //Health Log and Performance Controllers
 
-    fun getAllActivities(ctx: Context) {
-        val activities = activityDAO.getAll()
-        if (activities.size != 0) {
-            ctx.status(200)
-        }
-        else{
-            ctx.status(404)
-        }
-        ctx.json(activities)
-    }
 
-    fun getActivitiesByUserId(ctx: Context) {
-        if (userDao.findById(ctx.pathParam("user-id").toInt()) != null) {
-            val activities = activityDAO.findByUserId(ctx.pathParam("user-id").toInt())
-            if (activities.isNotEmpty()) {
-                ctx.json(activities)
-                ctx.status(200)
-            }
-            else{
-                ctx.status(404)
-            }
-        }
-        else{
-            ctx.status(404)
-        }
-    }
-
-    fun getActivitiesByActivityId(ctx: Context) {
-        val activity = activityDAO.findByActivityId((ctx.pathParam("activity-id").toInt()))
-        if (activity != null){
-            ctx.json(activity)
-            ctx.status(200)
-        }
-        else{
-            ctx.status(404)
-        }
-    }
-
-    fun addActivity(ctx: Context) {
-        val activity : Activity = jsonToObject(ctx.body())
-        val userId = userDao.findById(activity.userId)
-        if (userId != null) {
-            val activityId = activityDAO.save(activity)
-            activity.id = activityId
-            ctx.json(activity)
+    fun addHealthLogAndPerformance(ctx: Context) {
+        val health_log_and_performance: HealthGoalLogAndPerformance = jsonToObject(ctx.body())
+        val healthlogId = healthlogAndPerformanceDAO.save(health_log_and_performance)
+        if (healthlogId != null) {
+            health_log_and_performance.id = healthlogId
+            ctx.json(
+                mapOf(
+                    "id" to health_log_and_performance.id,
+                    "userId" to health_log_and_performance.userId,
+                    "healthGoalId" to health_log_and_performance.healthGoalId,
+                    "achievedValue" to health_log_and_performance.achievedValue
+                )
+            )
             ctx.status(201)
         }
         else{
-            ctx.status(404)
+            ctx.status(500)
         }
     }
 
-    fun deleteActivityByActivityId(ctx: Context){
-        if (activityDAO.deleteByActivityId(ctx.pathParam("activity-id").toInt()) != 0)
-            ctx.status(204)
-        else
+
+
+    fun getHealthPerformanceByUserId(ctx: Context) {
+
+        val performance = healthlogAndPerformanceDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (performance.isNotEmpty()) {
+            ctx.json(performance)
+            ctx.status(200)
+        } else {
             ctx.status(404)
+        }
+
     }
 
-    fun deleteActivityByUserId(ctx: Context){
-        if (activityDAO.deleteByUserId(ctx.pathParam("user-id").toInt()) != 0)
-            ctx.status(204)
-        else
-            ctx.status(404)
-    }
-
-    fun updateActivity(ctx: Context){
-        val activity : Activity = jsonToObject(ctx.body())
-        if (activityDAO.updateByActivityId(
-                activityId = ctx.pathParam("activity-id").toInt(),
-                activityToUpdate = activity) != 0)
+    fun deleteByUserId(ctx: Context){
+        if (healthlogAndPerformanceDAO.deleteByHealthGoalId(ctx.pathParam("health_goal_id").toInt()) != 0)
             ctx.status(204)
         else
             ctx.status(404)
@@ -155,3 +103,5 @@ object HealthTrackerController {
 
 
 }
+
+
