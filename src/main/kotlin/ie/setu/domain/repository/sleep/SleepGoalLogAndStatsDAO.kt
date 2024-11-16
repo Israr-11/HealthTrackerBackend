@@ -77,7 +77,7 @@ class SleepGoalLogAndStatsDAO {
         }
     }
 
-    fun deleteBySleepGoalId (dietGoalId: Int): Int{
+    fun deleteBySleepGoalId (sleepGoalId: Int): Int{
         return transaction{
             SleepGoalLogAndStats.deleteWhere { SleepGoalLogAndStats.sleepGoalId eq sleepGoalId }
         }
