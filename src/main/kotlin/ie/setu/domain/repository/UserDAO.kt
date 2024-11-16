@@ -29,24 +29,12 @@ class UserDAO {
         }
     }
 
-    fun findByEmail(email: String) :User?{
-        return transaction {
-            Users.selectAll().where { Users.email eq email}
-                .map{mapToUser(it)}
-                .firstOrNull()
-        }
-    }
-
     fun delete(id: Int):Int {
         return transaction {
             Users.deleteWhere { Users.id eq id }
         }
     }
 
-    /**
-     * Adds a [user] to the Users table.
-     * @return the id of the user following the add.
-     */
     fun save(user: User) : Int?{
         return transaction {
             Users.insert {
