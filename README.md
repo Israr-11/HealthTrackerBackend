@@ -12,7 +12,7 @@ So far, the application includes the following key features:
 - **Sleep Tracking**: Monitor sleep duration and quality, and set goals for healthy sleep habits.
 - **Screen Time Tracking**: Keep track of daily screen time, set usage limits, and promote healthier digital habits.
 
-Each of these features works together to provide users with a comprehensive understanding of their overall health, supporting their journey toward a balanced and healthier lifestyle.
+Each of these features works together to provide users with a comprehensive understanding of their overall health.
 
 ## Tech Stack
 
