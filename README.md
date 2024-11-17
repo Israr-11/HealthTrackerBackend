@@ -42,7 +42,7 @@ https://app.getpostman.com/join-team?invite_code=96de6429d0d752f66177dc92ee2d40e
 
 Make sure you have the following tools installed:
 
-- **Intelliga IDE**  
+- **IntelliJ IDEA**  
 - **Maven**  
 - **PostgreSQL** (or use Docker for local setup)
 
