@@ -20,7 +20,7 @@ The **HealthTracker Backend** is built using the following technologies:
 
 ### Framework
 - **Javalin** (Kotlin-based)  
-  Javalin is a lightweight, high-performance framework designed for building REST APIs. It's fast, simple, and scalable, making it a perfect fit for the backend of HealthTracker.
+  Javalin is a lightweight framework designed for building REST APIs. 
 
 ### Database
 - **PostgreSQL**  
@@ -28,7 +28,7 @@ The **HealthTracker Backend** is built using the following technologies:
 
 ### ORM
 - **Exposed ORM**  
-  Exposed is a Kotlin-based ORM that provides a type-safe way to interact with the database. It allows for seamless database operations while ensuring safety and readability.
+  Exposed is a Kotlin-based ORM that provides a type-safe way to interact with the database. 
 
 ### Build Tool
 - **Maven**  
@@ -40,8 +40,12 @@ The **HealthTracker Backend** is built using the following technologies:
 
 Make sure you have the following tools installed:
 
-- **Java 11 or later**  
+- **Intelliga IDE**  
 - **Maven**  
 - **PostgreSQL** (or use Docker for local setup)
+
+## API Testing
+You can check out the implementation of API in Postman using the link: 
+https://app.getpostman.com/join-team?invite_code=96de6429d0d752f66177dc92ee2d40ea&target_code=5bf450b1977f3c952be822b8b01adbbb
 
 
