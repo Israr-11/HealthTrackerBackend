@@ -1,6 +1,7 @@
 # HealthTracker Backend
 
 Welcome to the HealthTracker Backend! This is the server-side application that powers the HealthTracker system. The HealthTracker app helps users monitor and improve their well-being by tracking key health metrics like exercise, diet, sleep, and screen time. With this backend, users can set personalized health goals, track their progress, and receive tailored suggestions based on their activity and performance.
+Below is the deployed view of the backend running
 ![image](https://github.com/user-attachments/assets/b5a57ad5-9a36-4421-9804-5c33b03b7acb)
 
 ## Features
