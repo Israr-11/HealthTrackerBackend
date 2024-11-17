@@ -34,6 +34,10 @@ The **HealthTracker Backend** is built using the following technologies:
 - **Maven**  
   Maven manages project dependencies, builds the project, and runs tests. It ensures a consistent build process across all environments.
 
+## API Testing
+You can check out the implementation of API in Postman using the link: 
+https://app.getpostman.com/join-team?invite_code=96de6429d0d752f66177dc92ee2d40ea&target_code=5bf450b1977f3c952be822b8b01adbbb
+
 ## Getting Started
 
 ### Prerequisites
@@ -44,8 +48,6 @@ Make sure you have the following tools installed:
 - **Maven**  
 - **PostgreSQL** (or use Docker for local setup)
 
-## API Testing
-You can check out the implementation of API in Postman using the link: 
-https://app.getpostman.com/join-team?invite_code=96de6429d0d752f66177dc92ee2d40ea&target_code=5bf450b1977f3c952be822b8b01adbbb
+
 
 
