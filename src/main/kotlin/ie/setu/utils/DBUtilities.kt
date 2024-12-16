@@ -24,7 +24,12 @@ import ie.setu.domain.screentime.ScreenTimeGoal
 import ie.setu.domain.screentime.ScreenTimeLogAndPerformance
 import ie.setu.domain.db.screentime.ScreenTimeGoals
 import ie.setu.domain.db.screentime.ScreenTimeLogAndPerformances
+import ie.setu.domain.db.water.WaterGoalLogAndStats
+import ie.setu.domain.db.water.WaterGoals
+import ie.setu.domain.water.WaterGoal
+import ie.setu.domain.water.WaterLogAndStat
 import org.jetbrains.exposed.sql.ResultRow
+import org.joda.time.DateTime
 
 fun mapToUser(it: ResultRow) = User(
     id = it[Users.id],
@@ -137,4 +142,22 @@ fun mapToScreenTimeLogAndPerformance(row: ResultRow) = ScreenTimeLogAndPerforman
         extraHours = row[ScreenTimeLogAndPerformances.extraHours],
         recommendations = row[ScreenTimeLogAndPerformances.recommendations],
         entryTime = row[ScreenTimeLogAndPerformances.entryTime]
+)
+
+fun mapToWaterGoal(row: ResultRow) = WaterGoal(
+    id = row[WaterGoals.id],
+    userId = row[WaterGoals.userId],
+    waterTarget  = row[WaterGoals.waterTarget ],
+    entryTime = row[WaterGoals.entryTime]
+)
+
+fun mapToWaterLogAndStats(row: ResultRow) = WaterLogAndStat (
+    id = row[WaterGoalLogAndStats.id],
+    userId = row[WaterGoalLogAndStats.userId],
+    waterGoalId = row[WaterGoalLogAndStats.waterGoalId],
+    actualWaterIntake = row[WaterGoalLogAndStats.actualWaterIntake],
+    targetMet = row[WaterGoalLogAndStats.targetMet],
+    shortfall = row[WaterGoalLogAndStats.shortfall],
+    recommendations = row[WaterGoalLogAndStats.recommendations],
+    entryTime = row[WaterGoalLogAndStats.entryTime]
 )
