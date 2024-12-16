@@ -5,18 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5a477f-7f44-4373-8657-59415ceeea61" name="Changes" comment="github actions - add kdoc comments">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/SleepTrackerControllerTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WaterTrackerController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/water/WaterGoalLogAndStats.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/water/WaterGoals.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/water/WaterGoalDAO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/water/WaterGoalLogAndStatsDAO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/water/WaterGoal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/water/WaterLogAndStat.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/ScreenTimeTrackerControllerTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/water/WaterGoalDAOTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/water/WaterGoalLogAndPerformanceDAOTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/ExerciseTrackerControllerTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/diet/DietGoalLogAndPerformanceDAOTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/diet/DietGoalLogAndPerformanceDAOTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/exercise/ExerciseScheduleDAOTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/exercise/ExerciseScheduleDAOTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/health/HealthGoalLogAndPerformanceDAOTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/health/HealthGoalLogAndPerformanceDAOTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/screentime/ScreenTimeGoalLogAndPerformanceDAOTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/screentime/ScreenTimeGoalLogAndPerformanceDAOTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health-tracker-rest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/health-tracker-rest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilities.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/helpers/Fixtures.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/helpers/Fixtures.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" userTempatePath="" />
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\LENOVO\Desktop\Coverage" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -24,8 +37,8 @@
         <option value="HTML File" />
         <option value="Vue Options API Component" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -71,7 +84,7 @@
 }</component>
   <component name="ProblemsViewState">
     <option name="proportion" value="0.9" />
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
     <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
@@ -91,6 +104,7 @@
     "JUnit.ActivityDAOTest.executor": "Run",
     "JUnit.AddUserTest.addUser.executor": "Run",
     "JUnit.AddUserTest.executor": "Run",
+    "JUnit.All in HealthTrackerBackend.executor": "Run",
     "JUnit.ExerciseLogDAOTest.executor": "Run",
     "JUnit.ExercisePerformanceDAOTest.executor": "Run",
     "JUnit.ExercisePerformanceTrackingDAOTest.executor": "Run",
@@ -99,7 +113,7 @@
     "JUnit.HealthGoalDAOTest (1).executor": "Run",
     "JUnit.HealthGoalDAOTest.executor": "Run",
     "JUnit.HealthGoalLogAndPerformanceDAOTest (1).executor": "Run",
-    "JUnit.HealthGoalLogAndPerformanceDAOTest.executor": "Run",
+    "JUnit.HealthGoalLogAndPerformanceDAOTest.executor": "Coverage",
     "JUnit.HealthTrackerControllerTest$CreateActivities.add an activity when a user exists for it, returns a 201 response.executor": "Run",
     "JUnit.HealthTrackerControllerTest$CreateUsers.executor": "Run",
     "JUnit.HealthTrackerControllerTest$DeleteActivities.executor": "Run",
@@ -115,10 +129,14 @@
     "JUnit.ScreenTimeGoalDAOTest (1).executor": "Run",
     "JUnit.ScreenTimeGoalDAOTest.executor": "Run",
     "JUnit.ScreenTimeGoalLogAndPerformanceDAOTest.executor": "Run",
-    "JUnit.SleepGoalDAOTest.executor": "Run",
+    "JUnit.ScreenTimeTrackerControllerTest.executor": "Coverage",
+    "JUnit.SleepGoalDAOTest.executor": "Coverage",
     "JUnit.SleepLogAndStatDAO.executor": "Run",
-    "JUnit.SleepTrackerControllerTest.executor": "Run",
+    "JUnit.SleepTrackerControllerTest.executor": "Coverage",
     "JUnit.UserDAOTest.executor": "Run",
+    "JUnit.controllers in HealthTrackerBackend.executor": "Coverage",
+    "JUnit.repository in HealthTrackerBackend.executor": "Coverage",
+    "JUnit.water in HealthTrackerBackend.executor": "Run",
     "Kotlin.AppKt (1).executor": "Run",
     "Kotlin.AppKt.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
@@ -126,15 +144,20 @@
     "Maven.health-tracker-rest [compile].executor": "Run",
     "Maven.health-tracker-rest [org.jetbrains.dokka:dokka-maven-plugin:1.7.20:dokka].executor": "Run",
     "Maven.health-tracker-rest [validate].executor": "Run",
+    "OpenAPI/Swagger Code Generator.health-tracker-rest.yaml.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "water",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/LENOVO/Desktop/Assignment 1 Agile Development/HealthTrackerBackend/src/test/kotlin/ie/setu/repository/water",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
@@ -146,6 +169,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\test\kotlin\ie\setu\repository\water" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\main\kotlin\ie\setu\domain\db\exercise" />
       <recent name="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\main\kotlin\ie\setu\domain\db" />
@@ -160,63 +186,27 @@
       <recent name="ie.setu.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SleepTrackerControllerTest">
-    <configuration name="ScreenTimeGoalDAOTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Kotlin.AppKt">
+    <configuration name="All in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ie.setu.repository.screentime.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.repository.screentime" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.screentime.ScreenTimeGoalDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScreenTimeGoalDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="controllers in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ie.setu.repository.diet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.repository.diet" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.diet.ScreenTimeGoalDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScreenTimeGoalLogAndPerformanceDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="water in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ie.setu.repository.screentime.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.repository.screentime" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.screentime.ScreenTimeGoalLogAndPerformanceDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SleepTrackerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HealthTrackerBackend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ie.setu.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.controllers" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.SleepTrackerControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/water" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -228,13 +218,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="health-tracker-rest.yaml" type="SwaggerCodegen" editBeforeRun="true" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="customTemplatesPath" value="" />
+      <option name="generateToPath" value="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\main\gen" />
+      <option name="generationParameters">
+        <list />
+      </option>
+      <option name="generatorType" value="OPENAPI_GENERATOR_V7" />
+      <option name="jdkPath" value="C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.1\jbr\bin\java.exe" />
+      <option name="language" value="java" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="specificationPath" value="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\health-tracker-rest.yaml" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SleepTrackerControllerTest" />
         <item itemvalue="Kotlin.AppKt" />
-        <item itemvalue="JUnit.ScreenTimeGoalLogAndPerformanceDAOTest" />
-        <item itemvalue="JUnit.ScreenTimeGoalDAOTest (1)" />
-        <item itemvalue="JUnit.ScreenTimeGoalDAOTest" />
+        <item itemvalue="JUnit.All in HealthTrackerBackend" />
+        <item itemvalue="OpenAPI/Swagger Code Generator.health-tracker-rest.yaml" />
+        <item itemvalue="JUnit.water in HealthTrackerBackend" />
+        <item itemvalue="JUnit.controllers in HealthTrackerBackend" />
       </list>
     </recent_temporary>
   </component>
@@ -272,6 +279,11 @@
       <workItem from="1731566102338" duration="10925000" />
       <workItem from="1731577509940" duration="13488000" />
       <workItem from="1731657286837" duration="14197000" />
+      <workItem from="1732013196131" duration="1378000" />
+      <workItem from="1732014608802" duration="506000" />
+      <workItem from="1732015145509" duration="978000" />
+      <workItem from="1734341671201" duration="23354000" />
+      <workItem from="1734376898736" duration="5798000" />
     </task>
     <task id="LOCAL-00001" summary="Add endpoints, get one by email, delete one, update one">
       <option name="closed" value="true" />
@@ -438,22 +450,24 @@
     <MESSAGE value="github actions - add kdoc comments" />
     <option name="LAST_COMMIT_MESSAGE" value="github actions - add kdoc comments" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-field">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/exercise/ExercisePerformanceTracking.kt</url>
-          <line>10</line>
-          <properties myFieldName="checkedAt" myClassName="ie.setu.domain.exercise.ExercisePerformanceTracking" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HealthTrackerBackend$SleepGoalDAOTest.ic" NAME="SleepGoalDAOTest Coverage Results" MODIFIED="1731797645253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ie.setu.repository.diet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/HealthTrackerBackend$ScreenTimeTrackerControllerTest.ic" NAME="ScreenTimeTrackerControllerTest Coverage Results" MODIFIED="1731800078659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ie.setu.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/HealthTrackerBackend$SleepTrackerControllerTest.ic" NAME="SleepTrackerControllerTest Coverage Results" MODIFIED="1731798321284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ie.setu.controllers.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/HealthTrackerBackend$AppKt__1_.ic" NAME="AppKt (1) Coverage Results" MODIFIED="1731270385839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/HealthTrackerBackend$repository_in_HealthTrackerBackend.ic" NAME="repository in HealthTrackerBackend Coverage Results" MODIFIED="1732014691729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/HealthTrackerBackend$controllers_in_HealthTrackerBackend.ic" NAME="controllers in HealthTrackerBackend Coverage Results" MODIFIED="1732015081592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/health_tracker_rest$HealthTrackerControllerTest.ic" NAME="HealthTrackerControllerTest Coverage Results" MODIFIED="1729077501452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ie.setu.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/HealthTrackerBackend$HealthGoalLogAndPerformanceDAOTest.ic" NAME="HealthGoalLogAndPerformanceDAOTest Coverage Results" MODIFIED="1731797719958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ie.setu.repository.diet.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/health_tracker_rest$UserDAOTest.ic" NAME="UserDAOTest Coverage Results" MODIFIED="1728647030631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ie.setu.repository.*</FILTER>

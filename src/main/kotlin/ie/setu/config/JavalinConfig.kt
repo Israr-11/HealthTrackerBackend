@@ -6,6 +6,7 @@ import ie.setu.controllers.ExerciseTrackerController
 import ie.setu.controllers.DietTrackerController
 import ie.setu.controllers.SleepTrackerController
 import ie.setu.controllers.ScreenTimeTrackerController
+import ie.setu.controllers.WaterTrackerController
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.json.JavalinJackson
@@ -100,7 +101,19 @@ class JavalinConfig {
         app.get("/api/screen-time-goal-and-log/{user-id}", ScreenTimeTrackerController::getScreenTimePerformanceByUserId)
         app.post("/api/screen-time-goal-and-log", ScreenTimeTrackerController::addScreenTimeLogAndPerformance)
         app.delete("/api/screen-time-goal-and-log/{screen_time_goal_id}", ScreenTimeTrackerController::deleteByScreenTimeGoalId)
+        //---------------------
+        //---------------------
+        // Feature 6: Water Goal, Log and Performance API paths
+        //---------------
+        app.post("/api/water-goal", WaterTrackerController::addWaterGoal)
+        app.get("/api/water-goal",WaterTrackerController::getAllWaterGoal)
+        app.patch("/api/water-goal/{water-goal-id}", WaterTrackerController::updateWaterGoalByGoalId)
 
+        app.get("/api/water-goal-and-log/{user-id}", WaterTrackerController::getWaterPerformanceByUserId)
+        app.post("/api/water-goal-and-log", WaterTrackerController::addWaterLogAndPerformance)
+        app.delete("/api/water-goal-and-log/{water_goal_id}", WaterTrackerController::deleteByWaterGoalId)
+        //---------------------
+        //---------------------
     }
 
     private fun getRemoteAssignedPort(): Int {

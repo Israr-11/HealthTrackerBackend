@@ -23,6 +23,10 @@ import ie.setu.domain.screentime.ScreenTimeGoal
 import ie.setu.domain.db.screentime.ScreenTimeGoals
 import ie.setu.domain.screentime.ScreenTimeLogAndPerformance
 import ie.setu.domain.db.screentime.ScreenTimeLogAndPerformances
+import ie.setu.domain.water.WaterGoal
+import ie.setu.domain.db.water.WaterGoals
+import ie.setu.domain.water.WaterLogAndStat
+import ie.setu.domain.db.water.WaterGoalLogAndStats
 import ie.setu.domain.db.Users
 import ie.setu.domain.repository.UserDAO
 import ie.setu.domain.repository.exercise.ExerciseScheduleDAO
@@ -36,6 +40,8 @@ import ie.setu.domain.repository.diet.DietGoalDAO
 import ie.setu.domain.repository.diet.DietGoalLogAndPerformanceDAO
 import ie.setu.domain.repository.screentime.ScreenTimeGoalDAO
 import ie.setu.domain.repository.screentime.ScreenTimeLogAndPerformanceDAO
+import ie.setu.domain.repository.water.WaterGoalDAO
+import ie.setu.domain.repository.water.WaterGoalLogAndStatsDAO
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.joda.time.DateTime
 
@@ -158,6 +164,35 @@ val screenTimeLogsAndPerformances = arrayListOf<ScreenTimeLogAndPerformance>(
     )
 )
 
+
+val waterGoals = arrayListOf<WaterGoal>(
+    WaterGoal(id = 1, userId = 3, waterTarget = 4, entryTime = DateTime.now()),
+    WaterGoal(id = 2, userId = 3, waterTarget = 5, entryTime = DateTime.now())
+)
+
+val waterLogAndStat = arrayListOf<WaterLogAndStat>(
+    WaterLogAndStat(
+        id = 1,
+        userId = 3,
+        waterGoalId = 1,
+        actualWaterIntake = 5,
+        targetMet = false,
+        shortfall = 1,
+        recommendations = "Drink more water to meet the target.",
+        entryTime = DateTime.now()
+    ),
+    WaterLogAndStat(
+        id = 2,
+        userId = 3,
+        waterGoalId = 2,
+        actualWaterIntake = 5,
+        targetMet = true,
+        shortfall = 0,
+        recommendations = "Well done.",
+        entryTime = DateTime.now()
+    )
+)
+
 //Pouplation Section
 
 fun populateUserTable(): UserDAO {
@@ -253,4 +288,21 @@ fun populateScreenTimeLogAndPerformanceTable(): ScreenTimeLogAndPerformanceDAO {
     screenTimeLogDAO.save(screenTimeLogsAndPerformances[0])
     screenTimeLogDAO.save(screenTimeLogsAndPerformances[1])
     return screenTimeLogDAO
+}
+
+
+fun populateWaterGoalTable(): WaterGoalDAO {
+    SchemaUtils.create(WaterGoals)
+    val waterGoalDAO = WaterGoalDAO()
+    waterGoalDAO.save(waterGoals[0])
+    waterGoalDAO.save(waterGoals[1])
+    return waterGoalDAO
+}
+
+fun populateWaterLogAndPerformanceTable(): WaterGoalLogAndStatsDAO {
+    SchemaUtils.create(WaterGoalLogAndStats)
+    val waterLogDAO = WaterGoalLogAndStatsDAO()
+    waterLogDAO.save(waterLogAndStat[0])
+    waterLogDAO.save(waterLogAndStat[1])
+    return waterLogDAO
 }

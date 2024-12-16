@@ -3,6 +3,8 @@ info:
   version: 1.0.0
   title: Health Tracker API
   description: This API provides endpoints for handling CRUD operations on the Health Tracker data.
+servers:
+  - url: http://localhost:7001
 paths:
   /api/users/{user-id}:
     get:
@@ -10,8 +12,8 @@ paths:
         - $ref: '#/components/parameters/UserIdPath'
       responses:
         200:
-          description: This is a specifc user in the app
-          content: 
+          description: This is a specific user in the app
+          content:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
@@ -24,18 +26,111 @@ paths:
             schema:
               $ref: '#/components/schemas/User'
       responses:
-         200:
-           description: The user has been created
+        200:
+          description: The user has been created
     get:
       responses:
         200:
           description: This is a list of the users in the app
-          content: 
+          content:
             application/json:
               schema:
                 type: array
-                items: 
+                items:
                   $ref: '#/components/schemas/User'
+  /api/water-goal:
+    post:
+      description: Add a new water goal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WaterGoal'
+      responses:
+        201:
+          description: Water goal created successfully
+        400:
+          description: Invalid input
+    get:
+      description: Get all water goals
+      responses:
+        200:
+          description: List of all water goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WaterGoal'
+  /api/water-goal/{water-goal-id}:
+    patch:
+      description: Update a water goal by ID
+      parameters:
+        - in: path
+          name: water-goal-id
+          description: ID of the water goal to update
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WaterGoal'
+      responses:
+        200:
+          description: Water goal updated successfully
+        404:
+          description: Water goal not found
+  /api/water-goal-and-log/{user-id}:
+    get:
+      description: Get water performance by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's water performance data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WaterGoalTrackingAndPerformance'
+        404:
+          description: User not found
+  /api/water-goal-and-log:
+    post:
+      description: Add water log and performance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WaterGoalTrackingAndPerformance'
+      responses:
+        201:
+          description: Water log and performance added successfully
+        400:
+          description: Invalid input
+  /api/water-goal-and-log/{water_goal_id}:
+    delete:
+      description: Delete water log and performance by goal ID
+      parameters:
+        - in: path
+          name: water_goal_id
+          description: ID of the water goal to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Water log and performance deleted successfully
+        404:
+          description: Water goal not found
 components:
   parameters:
     UserIdPath:
@@ -50,7 +145,7 @@ components:
     User:
       type: object
       properties:
-        id: 
+        id:
           type: integer
           example: 3232
         name:
@@ -59,3 +154,21 @@ components:
         email:
           type: string
           example: joe@soap.com
+    WaterGoal:
+      type: object
+      properties:
+        userId:
+          type: integer
+        waterTarget:
+          type: integer
+    WaterGoalTrackingAndPerformance:
+      type: object
+      properties:
+        userId:
+          type: integer
+        waterGoalId:
+          type: integer
+        actualWaterIntake:
+          type: integer
+
+
