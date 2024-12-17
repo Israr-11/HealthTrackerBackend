@@ -27,6 +27,10 @@ import ie.setu.domain.water.WaterGoal
 import ie.setu.domain.db.water.WaterGoals
 import ie.setu.domain.water.WaterLogAndStat
 import ie.setu.domain.db.water.WaterGoalLogAndStats
+import ie.setu.domain.mentalhealth.MentalHealthLogAndPerformance
+import ie.setu.domain.mentalhealth.MentalHealthGoal
+import ie.setu.domain.db.mentalhealth.MentalHealthGoals
+import ie.setu.domain.db.mentalhealth.MentalHealthLogAndPerformances
 import ie.setu.domain.db.Users
 import ie.setu.domain.repository.UserDAO
 import ie.setu.domain.repository.exercise.ExerciseScheduleDAO
@@ -38,6 +42,8 @@ import ie.setu.domain.repository.health.HealthGoalDAO
 import ie.setu.domain.repository.health.HealthGoalLogAndPerformanceDAO
 import ie.setu.domain.repository.diet.DietGoalDAO
 import ie.setu.domain.repository.diet.DietGoalLogAndPerformanceDAO
+import ie.setu.domain.repository.mentalhealth.MentalHealthGoalDAO
+import ie.setu.domain.repository.mentalhealth.MentalHealthLogAndPerformanceDAO
 import ie.setu.domain.repository.screentime.ScreenTimeGoalDAO
 import ie.setu.domain.repository.screentime.ScreenTimeLogAndPerformanceDAO
 import ie.setu.domain.repository.water.WaterGoalDAO
@@ -193,6 +199,34 @@ val waterLogAndStat = arrayListOf<WaterLogAndStat>(
     )
 )
 
+val mentalHealthGoals = arrayListOf<MentalHealthGoal>(
+    MentalHealthGoal(id = 1, userId = 3, targetMoodScore = 80, entryTime = DateTime.now()),
+    MentalHealthGoal(id = 2, userId = 3, targetMoodScore = 90, entryTime = DateTime.now())
+)
+
+val mentalHealthLogsAndPerformances = arrayListOf<MentalHealthLogAndPerformance>(
+    MentalHealthLogAndPerformance(
+        id = 1,
+        userId = 3,
+        mentalHealthGoalId = 1,
+        moodScore = 70,
+        targetMet = false,
+        stressLevel = 8,
+        recommendations = "Focus on stress-relief techniques like meditation.",
+        entryTime = DateTime.now()
+    ),
+    MentalHealthLogAndPerformance(
+        id = 2,
+        userId = 3,
+        mentalHealthGoalId = 2,
+        moodScore = 85,
+        targetMet = true,
+        stressLevel = 3,
+        recommendations = "Great progress! Continue practicing self-care.",
+        entryTime = DateTime.now()
+    )
+)
+
 //Pouplation Section
 
 fun populateUserTable(): UserDAO {
@@ -305,4 +339,20 @@ fun populateWaterLogAndPerformanceTable(): WaterGoalLogAndStatsDAO {
     waterLogDAO.save(waterLogAndStat[0])
     waterLogDAO.save(waterLogAndStat[1])
     return waterLogDAO
+}
+
+fun populateMentalHealthGoalTable(): MentalHealthGoalDAO {
+    SchemaUtils.create(MentalHealthGoals)
+    val mentalHealthGoalDAO = MentalHealthGoalDAO()
+    mentalHealthGoalDAO.save(mentalHealthGoals[0])
+    mentalHealthGoalDAO.save(mentalHealthGoals[1])
+    return mentalHealthGoalDAO
+}
+
+fun populateMentalHealthLogAndPerformanceTable(): MentalHealthLogAndPerformanceDAO {
+    SchemaUtils.create(MentalHealthLogAndPerformances)
+    val mentalHealthLogDAO = MentalHealthLogAndPerformanceDAO()
+    mentalHealthLogDAO.save(mentalHealthLogsAndPerformances[0])
+    mentalHealthLogDAO.save(mentalHealthLogsAndPerformances[1])
+    return mentalHealthLogDAO
 }

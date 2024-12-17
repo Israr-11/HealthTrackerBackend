@@ -8,6 +8,8 @@ servers:
 paths:
   /api/users/{user-id}:
     get:
+      tags:
+        - "Users"
       parameters:
         - $ref: '#/components/parameters/UserIdPath'
       responses:
@@ -19,6 +21,8 @@ paths:
                 $ref: '#/components/schemas/User'
   /api/users:
     post:
+      tags:
+        - "Users"
       description: Add a user to the app
       requestBody:
         content:
@@ -29,6 +33,8 @@ paths:
         200:
           description: The user has been created
     get:
+      tags:
+        - "Users"
       responses:
         200:
           description: This is a list of the users in the app
@@ -38,8 +44,11 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/User'
+
   /api/water-goal:
     post:
+      tags:
+        - "Feature 6: Water"
       description: Add a new water goal
       requestBody:
         content:
@@ -52,6 +61,8 @@ paths:
         400:
           description: Invalid input
     get:
+      tags:
+        - "Feature 6: Water"
       description: Get all water goals
       responses:
         200:
@@ -62,8 +73,11 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/WaterGoal'
+
   /api/water-goal/{water-goal-id}:
     patch:
+      tags:
+        - "Feature 6: Water"
       description: Update a water goal by ID
       parameters:
         - in: path
@@ -82,8 +96,11 @@ paths:
           description: Water goal updated successfully
         404:
           description: Water goal not found
+
   /api/water-goal-and-log/{user-id}:
     get:
+      tags:
+        - "Feature 6: Water"
       description: Get water performance by user ID
       parameters:
         - in: path
@@ -103,8 +120,11 @@ paths:
                   $ref: '#/components/schemas/WaterGoalTrackingAndPerformance'
         404:
           description: User not found
+
   /api/water-goal-and-log:
     post:
+      tags:
+        - "Feature 6: Water"
       description: Add water log and performance
       requestBody:
         content:
@@ -116,8 +136,11 @@ paths:
           description: Water log and performance added successfully
         400:
           description: Invalid input
+
   /api/water-goal-and-log/{water_goal_id}:
     delete:
+      tags:
+        - "Feature 6: Water"
       description: Delete water log and performance by goal ID
       parameters:
         - in: path
@@ -131,6 +154,119 @@ paths:
           description: Water log and performance deleted successfully
         404:
           description: Water goal not found
+
+  /api/mental-health-goal:
+    summary: "Mental Health Goal Operations"
+    description: "This section handles operations related to mental health goals such as creating, retrieving, updating, and deleting mental health goals."
+    post:
+      tags:
+        - "Feature 7: Mental Health"
+      description: Add a new mental health goal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MentalHealthGoal'
+      responses:
+        201:
+          description: Mental health goal created successfully
+        400:
+          description: Invalid input
+    get:
+      tags:
+        - "Feature 7: Mental Health"
+      description: Get all mental health goals
+      responses:
+        200:
+          description: List of all mental health goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MentalHealthGoal'
+
+  /api/mental-health-goal/{mental-health-goal-id}:
+    patch:
+      tags:
+        - "Feature 7: Mental Health"
+      description: Update a mental health goal by ID
+      parameters:
+        - in: path
+          name: mental-health-goal-id
+          description: ID of the mental health goal to update
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MentalHealthGoal'
+      responses:
+        200:
+          description: Mental health goal updated successfully
+        404:
+          description: Mental health goal not found
+
+  /api/mental-health-goal-and-log/{user-id}:
+    get:
+      tags:
+        - "Feature 7: Mental Health"
+      description: Get mental health performance by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's mental health performance data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MentalHealthGoalTrackingAndPerformance'
+        404:
+          description: User not found
+
+  /api/mental-health-goal-and-log:
+    post:
+      tags:
+        - "Feature 7: Mental Health"
+      description: Add mental health log and performance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MentalHealthGoalTrackingAndPerformance'
+      responses:
+        201:
+          description: Mental health log and performance added successfully
+        400:
+          description: Invalid input
+
+  /api/mental-health-goal-and-log/{mental_health_goal_id}:
+    delete:
+      tags:
+        - "Feature 7: Mental Health"
+      description: Delete mental health log and performance by goal ID
+      parameters:
+        - in: path
+          name: mental_health_goal_id
+          description: ID of the mental health goal to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Mental health log and performance deleted successfully
+        404:
+          description: Mental health goal not found
+
 components:
   parameters:
     UserIdPath:
@@ -141,6 +277,7 @@ components:
       schema:
         type: integer
         example: 3232
+
   schemas:
     User:
       type: object
@@ -154,6 +291,7 @@ components:
         email:
           type: string
           example: joe@soap.com
+
     WaterGoal:
       type: object
       properties:
@@ -161,6 +299,7 @@ components:
           type: integer
         waterTarget:
           type: integer
+
     WaterGoalTrackingAndPerformance:
       type: object
       properties:
@@ -171,4 +310,21 @@ components:
         actualWaterIntake:
           type: integer
 
+    MentalHealthGoal:
+      type: object
+      properties:
+        userId:
+          type: integer
+        targetMoodScore:
+          type: integer
+
+    MentalHealthGoalTrackingAndPerformance:
+      type: object
+      properties:
+        userId:
+          type: integer
+        mentalHealthGoalId:
+          type: integer
+        moodScore:
+          type: integer
 

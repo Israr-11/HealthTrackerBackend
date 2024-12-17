@@ -28,6 +28,10 @@ import ie.setu.domain.db.water.WaterGoalLogAndStats
 import ie.setu.domain.db.water.WaterGoals
 import ie.setu.domain.water.WaterGoal
 import ie.setu.domain.water.WaterLogAndStat
+import ie.setu.domain.db.mentalhealth.MentalHealthGoals
+import ie.setu.domain.db.mentalhealth.MentalHealthLogAndPerformances
+import ie.setu.domain.mentalhealth.MentalHealthGoal
+import ie.setu.domain.mentalhealth.MentalHealthLogAndPerformance
 import org.jetbrains.exposed.sql.ResultRow
 import org.joda.time.DateTime
 
@@ -160,4 +164,22 @@ fun mapToWaterLogAndStats(row: ResultRow) = WaterLogAndStat (
     shortfall = row[WaterGoalLogAndStats.shortfall],
     recommendations = row[WaterGoalLogAndStats.recommendations],
     entryTime = row[WaterGoalLogAndStats.entryTime]
+)
+
+fun mapToMentalHealthGoal(row: ResultRow) = MentalHealthGoal(
+    id = row[MentalHealthGoals.id],
+    userId = row[MentalHealthGoals.userId],
+    targetMoodScore = row[MentalHealthGoals.targetMoodScore],
+    entryTime = row[MentalHealthGoals.entryTime]
+)
+
+fun mapToMentalHealthLogAndPerformance(row: ResultRow) = MentalHealthLogAndPerformance(
+    id = row[MentalHealthLogAndPerformances.id],
+    userId = row[MentalHealthLogAndPerformances.userId],
+    mentalHealthGoalId = row[MentalHealthLogAndPerformances.mentalHealthGoalId],
+    moodScore = row[MentalHealthLogAndPerformances.moodScore],
+    stressLevel = row[MentalHealthLogAndPerformances.stressLevel],
+    targetMet = row[MentalHealthLogAndPerformances.targetMet],
+    recommendations = row[MentalHealthLogAndPerformances.recommendations],
+    entryTime = row[MentalHealthLogAndPerformances.entryTime]
 )
