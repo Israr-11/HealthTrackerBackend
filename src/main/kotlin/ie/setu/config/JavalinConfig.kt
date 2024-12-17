@@ -1,12 +1,6 @@
 package ie.setu.config
 
-import ie.setu.controllers.UserController
-import ie.setu.controllers.HealthTrackerController
-import ie.setu.controllers.ExerciseTrackerController
-import ie.setu.controllers.DietTrackerController
-import ie.setu.controllers.SleepTrackerController
-import ie.setu.controllers.ScreenTimeTrackerController
-import ie.setu.controllers.WaterTrackerController
+import ie.setu.controllers.*
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.json.JavalinJackson
@@ -112,6 +106,18 @@ class JavalinConfig {
         app.get("/api/water-goal-and-log/{user-id}", WaterTrackerController::getWaterPerformanceByUserId)
         app.post("/api/water-goal-and-log", WaterTrackerController::addWaterLogAndPerformance)
         app.delete("/api/water-goal-and-log/{water_goal_id}", WaterTrackerController::deleteByWaterGoalId)
+        //---------------------
+        //---------------------
+
+        // Feature 7: Mental Health Goal, Log and Performance API paths
+        //---------------
+        app.post("/api/mental-health-goal", MentalHealthTrackerController::addMentalHealthGoal)
+        app.get("/api/mental-health-goal", MentalHealthTrackerController::getAllMentalHealthGoals)
+        app.patch("/api/mental-health-goal/{mental-health-goal-id}", MentalHealthTrackerController::updateMentalHealthGoalByGoalId)
+
+        app.get("/api/mental-health-goal-and-log/{user-id}", MentalHealthTrackerController::getMentalHealthPerformanceByUserId)
+        app.post("/api/mental-health-goal-and-log", MentalHealthTrackerController::addMentalHealthLogAndPerformance)
+        app.delete("/api/mental-health-goal-and-log/{mental_health_goal_id}", MentalHealthTrackerController::deleteByMentalHealthGoalId)
         //---------------------
         //---------------------
     }

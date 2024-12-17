@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5a477f-7f44-4373-8657-59415ceeea61" name="Changes" comment="github actions - add kdoc comments">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WaterTrackerController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/water/WaterGoalLogAndStats.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/water/WaterGoals.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/water/WaterGoalDAO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/water/WaterGoalLogAndStatsDAO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/water/WaterGoal.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/water/WaterLogAndStat.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/ScreenTimeTrackerControllerTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/water/WaterGoalDAOTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/water/WaterGoalLogAndPerformanceDAOTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/MentalHealthTrackerController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/mentalhealth/MentalHealthGoals.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/mentalhealth/MentalHealthLogAndPerformances.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/mentalhealth/MentalHealthGoalDAO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/mentalhealth/MentalHealthLogAndPerformanceDAO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/MentalHealthTrackerControllerTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/mentalhealth/MentalHealthGoalDAOTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/mentalhealth/MentalHealthGoalLogAndPerformanceDAOTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/health-tracker-rest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/health-tracker-rest.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilities.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/helpers/Fixtures.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/helpers/Fixtures.kt" afterDir="false" />
@@ -37,8 +34,9 @@
         <option value="HTML File" />
         <option value="Vue Options API Component" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -69,12 +67,12 @@
     &quot;assignee&quot;: &quot;sdrohan&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/sdrohan/health-tracker-rest.git&quot;,
-    &quot;accountId&quot;: &quot;a0899e81-4918-4c95-8dd3-94ff37809c1e&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Israr-11/HealthTrackerBackend.git",
+    "accountId": "7018a20f-6a8e-4261-a39a-39903d61fbe8"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/HealthTrackerControllerTest.kt" root0="SKIP_INSPECTION" />
   </component>
@@ -126,6 +124,8 @@
     "JUnit.HealthTrackerControllerTest.get all users from the database returns 200 or 404 response.executor": "Run",
     "JUnit.HealthTrackerControllerTestMockDB.executor": "Run",
     "JUnit.HealthTrackerControllerTestMockDB.getting a user by id when id exists, returns a 200 response.executor": "Run",
+    "JUnit.MentalHealthGoalDAOTest.executor": "Run",
+    "JUnit.MentalHealthTrackerControllerTest.executor": "Run",
     "JUnit.ScreenTimeGoalDAOTest (1).executor": "Run",
     "JUnit.ScreenTimeGoalDAOTest.executor": "Run",
     "JUnit.ScreenTimeGoalLogAndPerformanceDAOTest.executor": "Run",
@@ -135,6 +135,7 @@
     "JUnit.SleepTrackerControllerTest.executor": "Coverage",
     "JUnit.UserDAOTest.executor": "Run",
     "JUnit.controllers in HealthTrackerBackend.executor": "Coverage",
+    "JUnit.mentalhealth in HealthTrackerBackend.executor": "Run",
     "JUnit.repository in HealthTrackerBackend.executor": "Coverage",
     "JUnit.water in HealthTrackerBackend.executor": "Run",
     "Kotlin.AppKt (1).executor": "Run",
@@ -147,7 +148,7 @@
     "OpenAPI/Swagger Code Generator.health-tracker-rest.yaml.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "water",
+    "git-widget-placeholder": "mentalhealth",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/LENOVO/Desktop/Assignment 1 Agile Development/HealthTrackerBackend/src/test/kotlin/ie/setu/repository/water",
     "node.js.detected.package.eslint": "true",
@@ -173,6 +174,7 @@
       <recent name="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\test\kotlin\ie\setu\repository\water" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\main\kotlin\ie\setu\domain" />
       <recent name="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\main\kotlin\ie\setu\domain\db\exercise" />
       <recent name="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\main\kotlin\ie\setu\domain\db" />
     </key>
@@ -187,26 +189,40 @@
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.AppKt">
-    <configuration name="All in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MentalHealthGoalDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.repository.mentalhealth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.repository.mentalhealth" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.mentalhealth.MentalHealthGoalDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="controllers in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MentalHealthTrackerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.MentalHealthTrackerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="water in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="mentalhealth in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
       <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/water" />
+      <dir value="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/mentalhealth" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -238,10 +254,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.AppKt" />
-        <item itemvalue="JUnit.All in HealthTrackerBackend" />
         <item itemvalue="OpenAPI/Swagger Code Generator.health-tracker-rest.yaml" />
-        <item itemvalue="JUnit.water in HealthTrackerBackend" />
-        <item itemvalue="JUnit.controllers in HealthTrackerBackend" />
+        <item itemvalue="JUnit.MentalHealthTrackerControllerTest" />
+        <item itemvalue="JUnit.mentalhealth in HealthTrackerBackend" />
+        <item itemvalue="JUnit.MentalHealthGoalDAOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -449,6 +465,25 @@
     <MESSAGE value="lab09 - vue crud for user." />
     <MESSAGE value="github actions - add kdoc comments" />
     <option name="LAST_COMMIT_MESSAGE" value="github actions - add kdoc comments" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/MentalHealthTrackerControllerTest.kt</url>
+          <line>25</line>
+          <properties class="ie.setu.controllers.MentalHealthTrackerControllerTest.ReadMentalHealthGoals" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HealthTrackerBackend$SleepGoalDAOTest.ic" NAME="SleepGoalDAOTest Coverage Results" MODIFIED="1731797645253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
