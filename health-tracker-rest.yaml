@@ -45,6 +45,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/User'
 
+
+#Feature 6: Water
   /api/water-goal:
     post:
       tags:
@@ -155,6 +157,7 @@ paths:
         404:
           description: Water goal not found
 
+  #Feature 7: Mental Health
   /api/mental-health-goal:
     summary: "Mental Health Goal Operations"
     description: "This section handles operations related to mental health goals such as creating, retrieving, updating, and deleting mental health goals."
@@ -267,6 +270,119 @@ paths:
         404:
           description: Mental health goal not found
 
+  /api/walk-goal:
+    summary: "Walk Goal Operations"
+    description: "This section handles operations related to walk goals such as creating, retrieving, updating, and deleting walk goals."
+    post:
+      tags:
+        - "Feature 8: Walk"
+      description: Add a new walk goal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WalkGoal'
+      responses:
+        201:
+          description: Walk goal created successfully
+        400:
+          description: Invalid input
+    get:
+      tags:
+        - "Feature 8: Walk"
+      description: Get all walk goals
+      responses:
+        200:
+          description: List of all walk goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WalkGoal'
+
+  /api/walk-goal/{walk-goal-id}:
+    patch:
+      tags:
+        - "Feature 8: Walk"
+      description: Update a walk goal by ID
+      parameters:
+        - in: path
+          name: walk-goal-id
+          description: ID of the walk goal to update
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WalkGoal'
+      responses:
+        200:
+          description: Walk goal updated successfully
+        404:
+          description: Walk goal not found
+
+  /api/walk-goal-and-log/{user-id}:
+    get:
+      tags:
+        - "Feature 8: Walk"
+      description: Get walk performance by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's walk performance data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WalkGoalTrackingAndPerformance'
+        404:
+          description: User not found
+
+  /api/walk-goal-and-log:
+    post:
+      tags:
+        - "Feature 8: Walk"
+      description: Add walk log and performance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WalkGoalTrackingAndPerformance'
+      responses:
+        201:
+          description: Walk log and performance added successfully
+        400:
+          description: Invalid input
+
+  /api/walk-goal-and-log/{walk-goal-id}:
+    delete:
+      tags:
+        - "Feature 8: Walk"
+      description: Delete walk log and performance by goal ID
+      parameters:
+        - in: path
+          name: walk-goal-id
+          description: ID of the walk goal to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Walk log and performance deleted successfully
+        404:
+          description: Walk goal not found
+
+
 components:
   parameters:
     UserIdPath:
@@ -327,4 +443,27 @@ components:
           type: integer
         moodScore:
           type: integer
+
+    WalkGoal:
+          type: object
+          properties:
+            userId:
+              type: integer
+            targetSteps:
+              type: integer
+              description: Target distance or steps for the walk goal
+            uphill:
+              type: boolean
+
+    WalkGoalTrackingAndPerformance:
+          type: object
+          properties:
+            userId:
+              type: integer
+            walkGoalId:
+              type: integer
+            actualSteps:
+              type: integer
+              description: Actual distance or steps completed
+
 

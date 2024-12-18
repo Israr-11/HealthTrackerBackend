@@ -30,8 +30,12 @@ import ie.setu.domain.water.WaterGoal
 import ie.setu.domain.water.WaterLogAndStat
 import ie.setu.domain.db.mentalhealth.MentalHealthGoals
 import ie.setu.domain.db.mentalhealth.MentalHealthLogAndPerformances
+import ie.setu.domain.db.walk.WalkGoalLogAndStats
+import ie.setu.domain.db.walk.WalkGoals
 import ie.setu.domain.mentalhealth.MentalHealthGoal
 import ie.setu.domain.mentalhealth.MentalHealthLogAndPerformance
+import ie.setu.domain.walk.WalkGoal
+import ie.setu.domain.walk.WalkLogAndStat
 import org.jetbrains.exposed.sql.ResultRow
 import org.joda.time.DateTime
 
@@ -182,4 +186,24 @@ fun mapToMentalHealthLogAndPerformance(row: ResultRow) = MentalHealthLogAndPerfo
     targetMet = row[MentalHealthLogAndPerformances.targetMet],
     recommendations = row[MentalHealthLogAndPerformances.recommendations],
     entryTime = row[MentalHealthLogAndPerformances.entryTime]
+)
+
+fun mapToWalkGoal(row: ResultRow) = WalkGoal(
+    id = row[WalkGoals.id],
+    userId = row[WalkGoals.userId],
+    targetSteps = row[WalkGoals.targetSteps],
+    uphill = row[WalkGoals.uphill],
+    entryTime = row[WalkGoals.entryTime]
+)
+
+fun mapToWalkLogAndStat(row: ResultRow) = WalkLogAndStat(
+    id = row[WalkGoalLogAndStats.id],
+    userId = row[WalkGoalLogAndStats.userId],
+    walkGoalId = row[WalkGoalLogAndStats.walkGoalId],
+    actualSteps = row[WalkGoalLogAndStats.actualSteps],
+    targetMet = row[WalkGoalLogAndStats.targetMet],
+    extraSteps = row[WalkGoalLogAndStats.extraSteps],
+    walkQuality = row[WalkGoalLogAndStats.walkQuality],
+    recommendations = row[WalkGoalLogAndStats.recommendations],
+    entryTime = row[WalkGoalLogAndStats.entryTime]
 )
