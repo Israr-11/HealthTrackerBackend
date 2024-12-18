@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ff5a477f-7f44-4373-8657-59415ceeea61" name="Changes" comment="github actions - add kdoc comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health-tracker-rest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/health-tracker-rest.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
