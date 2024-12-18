@@ -31,6 +31,10 @@ import ie.setu.domain.mentalhealth.MentalHealthLogAndPerformance
 import ie.setu.domain.mentalhealth.MentalHealthGoal
 import ie.setu.domain.db.mentalhealth.MentalHealthGoals
 import ie.setu.domain.db.mentalhealth.MentalHealthLogAndPerformances
+import ie.setu.domain.walk.WalkGoal
+import ie.setu.domain.walk.WalkLogAndStat
+import ie.setu.domain.db.walk.WalkGoals
+import ie.setu.domain.db.walk.WalkGoalLogAndStats
 import ie.setu.domain.db.Users
 import ie.setu.domain.repository.UserDAO
 import ie.setu.domain.repository.exercise.ExerciseScheduleDAO
@@ -48,6 +52,9 @@ import ie.setu.domain.repository.screentime.ScreenTimeGoalDAO
 import ie.setu.domain.repository.screentime.ScreenTimeLogAndPerformanceDAO
 import ie.setu.domain.repository.water.WaterGoalDAO
 import ie.setu.domain.repository.water.WaterGoalLogAndStatsDAO
+import ie.setu.domain.repository.walk.WalkGoalDAO
+import ie.setu.domain.repository.walk.WalkGoalLogAndStatsDAO
+
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.joda.time.DateTime
 
@@ -227,6 +234,37 @@ val mentalHealthLogsAndPerformances = arrayListOf<MentalHealthLogAndPerformance>
     )
 )
 
+val walkGoals = arrayListOf<WalkGoal>(
+    WalkGoal(id = 1, userId = 3, targetSteps = 10000, uphill = true, entryTime = DateTime.now()),
+    WalkGoal(id = 2, userId = 3, targetSteps = 12000, uphill = false, entryTime = DateTime.now())
+)
+
+val walkLogsAndStats = arrayListOf<WalkLogAndStat>(
+    WalkLogAndStat(
+        id = 1,
+        userId = 3,
+        walkGoalId = 1,
+        actualSteps = 10500,
+        targetMet = true,
+        extraSteps = 500,
+        walkQuality = "High",
+        recommendations = "Keep up the good work and try to increase your uphill walks.",
+        entryTime = DateTime.now()
+    ),
+    WalkLogAndStat(
+        id = 2,
+        userId = 3,
+        walkGoalId = 2,
+        actualSteps = 11000,
+        targetMet = true,
+        extraSteps = 1000,
+        walkQuality = "Normal",
+        recommendations = "Great job! Aim for even more steps in the coming weeks.",
+        entryTime = DateTime.now()
+    )
+)
+
+
 //Pouplation Section
 
 fun populateUserTable(): UserDAO {
@@ -355,4 +393,20 @@ fun populateMentalHealthLogAndPerformanceTable(): MentalHealthLogAndPerformanceD
     mentalHealthLogDAO.save(mentalHealthLogsAndPerformances[0])
     mentalHealthLogDAO.save(mentalHealthLogsAndPerformances[1])
     return mentalHealthLogDAO
+}
+
+fun populateWalkGoalTable(): WalkGoalDAO {
+    SchemaUtils.create(WalkGoals)
+    val walkGoalDAO = WalkGoalDAO()
+    walkGoalDAO.save(walkGoals[0])
+    walkGoalDAO.save(walkGoals[1])
+    return walkGoalDAO
+}
+
+fun populateWalkGoalLogAndStatTable(): WalkGoalLogAndStatsDAO {
+    SchemaUtils.create(WalkGoalLogAndStats)
+    val walkGoalLogAndStatDAO = WalkGoalLogAndStatsDAO()
+    walkGoalLogAndStatDAO.save(walkLogsAndStats[0])
+    walkGoalLogAndStatDAO.save(walkLogsAndStats[1])
+    return walkGoalLogAndStatDAO
 }

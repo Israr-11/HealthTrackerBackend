@@ -120,6 +120,17 @@ class JavalinConfig {
         app.delete("/api/mental-health-goal-and-log/{mental_health_goal_id}", MentalHealthTrackerController::deleteByMentalHealthGoalId)
         //---------------------
         //---------------------
+        // Feature 8: Walk Goal, Log and Stats API paths
+        //---------------
+        app.post("/api/walk-goal", WalkTrackerController::addWalkGoal)
+        app.get("/api/walk-goal", WalkTrackerController::getAllWalkGoals)
+        app.patch("/api/walk-goal/{walk-goal-id}", WalkTrackerController::updateWalkGoalByGoalId)
+
+        app.get("/api/walk-goal-and-log/{user-id}", WalkTrackerController::getWalkPerformanceByUserId)
+        app.post("/api/walk-goal-and-log", WalkTrackerController::addWalkLogAndPerformance)
+        app.delete("/api/walk-goal-and-log/{walk_goal_id}", WalkTrackerController::deleteByWalkGoalId)
+        //---------------------
+        //---------------------
     }
 
     private fun getRemoteAssignedPort(): Int {

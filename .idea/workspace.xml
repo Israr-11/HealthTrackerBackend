@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5a477f-7f44-4373-8657-59415ceeea61" name="Changes" comment="github actions - add kdoc comments">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/MentalHealthTrackerController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/mentalhealth/MentalHealthGoals.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/mentalhealth/MentalHealthLogAndPerformances.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/mentalhealth/MentalHealthGoalDAO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/mentalhealth/MentalHealthLogAndPerformanceDAO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/MentalHealthTrackerControllerTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/mentalhealth/MentalHealthGoalDAOTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/mentalhealth/MentalHealthGoalLogAndPerformanceDAOTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WalkTrackerController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/walk/WalkGoalLogAndStats.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/walk/WalkGoals.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/walk/WalkGoalDAO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/walk/WalkGoalLogAndStatsDAO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/walk/WalkGoal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/walk/WalkLogAndStat.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/WalkTrackerControllerTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/walk/WalkGoalDAOTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/walk/WalkGoalLogAndStatsDAOTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/health-tracker-rest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/health-tracker-rest.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" afterDir="false" />
@@ -67,12 +69,12 @@
     &quot;assignee&quot;: &quot;sdrohan&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Israr-11/HealthTrackerBackend.git",
-    "accountId": "7018a20f-6a8e-4261-a39a-39903d61fbe8"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Israr-11/HealthTrackerBackend.git&quot;,
+    &quot;accountId&quot;: &quot;7018a20f-6a8e-4261-a39a-39903d61fbe8&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/HealthTrackerControllerTest.kt" root0="SKIP_INSPECTION" />
   </component>
@@ -127,16 +129,22 @@
     "JUnit.MentalHealthGoalDAOTest.executor": "Run",
     "JUnit.MentalHealthTrackerControllerTest.executor": "Run",
     "JUnit.ScreenTimeGoalDAOTest (1).executor": "Run",
-    "JUnit.ScreenTimeGoalDAOTest.executor": "Run",
+    "JUnit.ScreenTimeGoalDAOTest.executor": "Profiler#1",
     "JUnit.ScreenTimeGoalLogAndPerformanceDAOTest.executor": "Run",
     "JUnit.ScreenTimeTrackerControllerTest.executor": "Coverage",
     "JUnit.SleepGoalDAOTest.executor": "Coverage",
     "JUnit.SleepLogAndStatDAO.executor": "Run",
     "JUnit.SleepTrackerControllerTest.executor": "Coverage",
     "JUnit.UserDAOTest.executor": "Run",
+    "JUnit.WalkGoalDAOTest$ReadWalkGoals.executor": "Run",
+    "JUnit.WalkGoalDAOTest$ReadWalkGoals.get all goals from populated table.executor": "Run",
+    "JUnit.WalkGoalDAOTest.executor": "Run",
+    "JUnit.WalkGoalLogAndStatsDAOTest.executor": "Run",
+    "JUnit.WalkTrackerControllerTest.executor": "Run",
     "JUnit.controllers in HealthTrackerBackend.executor": "Coverage",
     "JUnit.mentalhealth in HealthTrackerBackend.executor": "Run",
     "JUnit.repository in HealthTrackerBackend.executor": "Coverage",
+    "JUnit.walk in HealthTrackerBackend.executor": "Run",
     "JUnit.water in HealthTrackerBackend.executor": "Run",
     "Kotlin.AppKt (1).executor": "Run",
     "Kotlin.AppKt.executor": "Run",
@@ -148,7 +156,7 @@
     "OpenAPI/Swagger Code Generator.health-tracker-rest.yaml.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "mentalhealth",
+    "git-widget-placeholder": "walk",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/LENOVO/Desktop/Assignment 1 Agile Development/HealthTrackerBackend/src/test/kotlin/ie/setu/repository/water",
     "node.js.detected.package.eslint": "true",
@@ -189,40 +197,63 @@
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.AppKt">
-    <configuration name="MentalHealthGoalDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ScreenTimeGoalDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ie.setu.repository.mentalhealth.*" />
+          <option name="PATTERN" value="ie.setu.repository.water.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.repository.mentalhealth" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.mentalhealth.MentalHealthGoalDAOTest" />
+      <option name="PACKAGE_NAME" value="ie.setu.repository.water" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.water.ScreenTimeGoalDAOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MentalHealthTrackerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WalkGoalDAOTest$ReadWalkGoals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="PATTERN" value="ie.setu.repository.walk.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.controllers" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.MentalHealthTrackerControllerTest" />
+      <option name="PACKAGE_NAME" value="ie.setu.repository.walk.WalkGoalDAOTest" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.walk.WalkGoalDAOTest$ReadWalkGoals" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mentalhealth in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WalkGoalDAOTest$ReadWalkGoals.get all goals from populated table" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/mentalhealth" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.repository.walk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.repository.walk.WalkGoalDAOTest" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.walk.WalkGoalDAOTest$ReadWalkGoals" />
+      <option name="METHOD_NAME" value="get all goals from populated table" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalkGoalDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HealthTrackerBackend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.repository.walk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.repository.walk" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.walk.WalkGoalDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -234,30 +265,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="health-tracker-rest.yaml" type="SwaggerCodegen" editBeforeRun="true" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allowRunningInParallel" value="false" />
-      <option name="customTemplatesPath" value="" />
-      <option name="generateToPath" value="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\main\gen" />
-      <option name="generationParameters">
-        <list />
-      </option>
-      <option name="generatorType" value="OPENAPI_GENERATOR_V7" />
-      <option name="jdkPath" value="C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.1\jbr\bin\java.exe" />
-      <option name="language" value="java" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="specificationPath" value="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\health-tracker-rest.yaml" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.AppKt" />
-        <item itemvalue="OpenAPI/Swagger Code Generator.health-tracker-rest.yaml" />
-        <item itemvalue="JUnit.MentalHealthTrackerControllerTest" />
-        <item itemvalue="JUnit.mentalhealth in HealthTrackerBackend" />
-        <item itemvalue="JUnit.MentalHealthGoalDAOTest" />
+        <item itemvalue="JUnit.WalkGoalDAOTest" />
+        <item itemvalue="JUnit.ScreenTimeGoalDAOTest" />
+        <item itemvalue="JUnit.WalkGoalDAOTest$ReadWalkGoals.get all goals from populated table" />
+        <item itemvalue="JUnit.WalkGoalDAOTest$ReadWalkGoals" />
       </list>
     </recent_temporary>
   </component>
@@ -482,6 +496,11 @@
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/water/WaterGoalDAOTest.kt</url>
+          <line>38</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
