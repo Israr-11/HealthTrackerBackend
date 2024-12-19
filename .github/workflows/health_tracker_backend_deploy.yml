@@ -15,6 +15,11 @@ jobs:
           cache: 'maven'
       - name: Maven Package
         run: mvn -B clean package -DskipTests
+      - name: Jar Builds
+        uses: actions/upload-artifact@v4.4.2 # or latest v4
+        with:
+            name: Jar with Builds
+            path: target/*.jar
   test:
     name: Maven Tests
     needs: package
