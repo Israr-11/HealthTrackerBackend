@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5a477f-7f44-4373-8657-59415ceeea61" name="Changes" comment="github actions - add kdoc comments">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/WaterTrackerControllerTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health-tracker-rest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/health-tracker-rest.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +15,7 @@
   </component>
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" userTempatePath="" />
   <component name="ExportToHTMLSettings">
-    <option name="OUTPUT_DIRECTORY" value="C:\Users\LENOVO\Desktop\Coverage" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\LENOVO\Desktop\Israr Ahmed Agile Final Report\Coverage report" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -128,6 +128,7 @@
     "JUnit.WalkGoalDAOTest.executor": "Run",
     "JUnit.WalkGoalLogAndStatsDAOTest.executor": "Run",
     "JUnit.WalkTrackerControllerTest.executor": "Run",
+    "JUnit.WaterTrackerControllerTest.executor": "Run",
     "JUnit.controllers in HealthTrackerBackend.executor": "Coverage",
     "JUnit.mentalhealth in HealthTrackerBackend.executor": "Run",
     "JUnit.repository in HealthTrackerBackend.executor": "Coverage",
@@ -138,6 +139,8 @@
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.health-tracker-rest [clean].executor": "Run",
     "Maven.health-tracker-rest [compile].executor": "Run",
+    "Maven.health-tracker-rest [org.apache.maven.plugins:maven-deploy-plugin:3.1.2:deploy-file].executor": "Run",
+    "Maven.health-tracker-rest [org.apache.maven.plugins:maven-deploy-plugin:3.1.2:deploy].executor": "Run",
     "Maven.health-tracker-rest [org.jetbrains.dokka:dokka-maven-plugin:1.7.20:dokka].executor": "Run",
     "Maven.health-tracker-rest [validate].executor": "Run",
     "OpenAPI/Swagger Code Generator.health-tracker-rest.yaml.executor": "Run",
@@ -145,7 +148,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/LENOVO/Desktop/Assignment 1 Agile Development/HealthTrackerBackend/src/test/kotlin/ie/setu/repository/water",
+    "last_opened_file_path": "C:/Users/LENOVO/Desktop/Israr Ahmed Agile Final Report/Coverage report",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -183,53 +186,7 @@
       <recent name="ie.setu.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.AppKt">
-    <configuration name="ScreenTimeGoalDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HealthTrackerBackend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ie.setu.repository.water.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.repository.water" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.water.ScreenTimeGoalDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WalkGoalDAOTest$ReadWalkGoals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HealthTrackerBackend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ie.setu.repository.walk.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.repository.walk.WalkGoalDAOTest" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.walk.WalkGoalDAOTest$ReadWalkGoals" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WalkGoalDAOTest$ReadWalkGoals.get all goals from populated table" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HealthTrackerBackend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ie.setu.repository.walk.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.repository.walk.WalkGoalDAOTest" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.walk.WalkGoalDAOTest$ReadWalkGoals" />
-      <option name="METHOD_NAME" value="get all goals from populated table" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.WaterTrackerControllerTest">
     <configuration name="WalkGoalDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
       <extension name="coverage">
@@ -245,6 +202,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WaterTrackerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HealthTrackerBackend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.WaterTrackerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="controllers in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HealthTrackerBackend" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="repository in HealthTrackerBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HealthTrackerBackend" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ie.setu.AppKt" />
       <module name="HealthTrackerBackend" />
@@ -254,11 +242,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WaterTrackerControllerTest" />
+        <item itemvalue="JUnit.repository in HealthTrackerBackend" />
+        <item itemvalue="JUnit.controllers in HealthTrackerBackend" />
         <item itemvalue="Kotlin.AppKt" />
         <item itemvalue="JUnit.WalkGoalDAOTest" />
-        <item itemvalue="JUnit.ScreenTimeGoalDAOTest" />
-        <item itemvalue="JUnit.WalkGoalDAOTest$ReadWalkGoals.get all goals from populated table" />
-        <item itemvalue="JUnit.WalkGoalDAOTest$ReadWalkGoals" />
       </list>
     </recent_temporary>
   </component>
@@ -301,6 +289,8 @@
       <workItem from="1732015145509" duration="978000" />
       <workItem from="1734341671201" duration="23354000" />
       <workItem from="1734376898736" duration="5798000" />
+      <workItem from="1734630904125" duration="437000" />
+      <workItem from="1734631827110" duration="1458000" />
     </task>
     <task id="LOCAL-00001" summary="Add endpoints, get one by email, delete one, update one">
       <option name="closed" value="true" />
@@ -473,7 +463,7 @@
         <line-breakpoint enabled="true" type="kotlin-function">
           <url>file://$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/MentalHealthTrackerControllerTest.kt</url>
           <line>25</line>
-          <properties class="ie.setu.controllers.MentalHealthTrackerControllerTest.ReadMentalHealthGoals">
+          <properties class="ie.setu.controllers.MentalHealthTrackerControllerTest.ReadMentalHealthGoals" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -502,8 +492,8 @@
       <FILTER>ie.setu.controllers.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/HealthTrackerBackend$AppKt__1_.ic" NAME="AppKt (1) Coverage Results" MODIFIED="1731270385839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/HealthTrackerBackend$repository_in_HealthTrackerBackend.ic" NAME="repository in HealthTrackerBackend Coverage Results" MODIFIED="1732014691729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/HealthTrackerBackend$controllers_in_HealthTrackerBackend.ic" NAME="controllers in HealthTrackerBackend Coverage Results" MODIFIED="1732015081592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/HealthTrackerBackend$controllers_in_HealthTrackerBackend.ic" NAME="controllers in HealthTrackerBackend Coverage Results" MODIFIED="1734631935522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/HealthTrackerBackend$repository_in_HealthTrackerBackend.ic" NAME="repository in HealthTrackerBackend Coverage Results" MODIFIED="1734632016255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/health_tracker_rest$HealthTrackerControllerTest.ic" NAME="HealthTrackerControllerTest Coverage Results" MODIFIED="1729077501452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ie.setu.controllers.*</FILTER>
     </SUITE>
