@@ -3,7 +3,6 @@ package ie.setu.domain.repository.walk
 import ie.setu.domain.db.walk.WalkGoals
 import ie.setu.domain.walk.WalkGoal
 import ie.setu.utils.mapToWalkGoal
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.insert

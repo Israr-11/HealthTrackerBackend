@@ -37,7 +37,6 @@ import ie.setu.domain.mentalhealth.MentalHealthLogAndPerformance
 import ie.setu.domain.walk.WalkGoal
 import ie.setu.domain.walk.WalkLogAndStat
 import org.jetbrains.exposed.sql.ResultRow
-import org.joda.time.DateTime
 
 fun mapToUser(it: ResultRow) = User(
     id = it[Users.id],

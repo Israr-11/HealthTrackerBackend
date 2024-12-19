@@ -4,7 +4,8 @@ Welcome to the HealthTracker Backend! This is the server-side application that p
 
 ### Below is the deployed view of the backend running
 
-![image](https://github.com/user-attachments/assets/b5a57ad5-9a36-4421-9804-5c33b03b7acb)
+![image](https://github.com/user-attachments/assets/7c274e6a-b00f-4ce7-b484-5e7437e0fecb)
+
 
 ## Features
 

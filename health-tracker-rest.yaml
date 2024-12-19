@@ -46,6 +46,621 @@ paths:
                   $ref: '#/components/schemas/User'
 
 
+  # Feature 1: Exercise
+  /api/exercise-schedule:
+    get:
+      tags:
+        - "Feature 1: Exercise"
+      description: Get all exercise schedules
+      responses:
+        200:
+          description: List of all exercise schedules
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExerciseSchedule'
+
+    post:
+      tags:
+        - "Feature 1: Exercise"
+      description: Add a new exercise schedule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExerciseSchedule'
+      responses:
+        201:
+          description: Exercise schedule created successfully
+        400:
+          description: Invalid input
+
+  /api/exercise-schedule/{exercise-schedule-id}:
+    delete:
+      tags:
+        - "Feature 1: Exercise"
+      description: Delete an exercise schedule by ID
+      parameters:
+        - in: path
+          name: exercise-schedule-id
+          description: ID of the exercise schedule to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Exercise schedule deleted successfully
+        404:
+          description: Exercise schedule not found
+        400:
+          description: Invalid exercise schedule ID
+
+  /api/exercise-log:
+    get:
+      tags:
+        - "Feature 1: Exercise"
+      description: Get all exercise logs
+      responses:
+        200:
+          description: List of all exercise logs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExerciseLog'
+
+    post:
+      tags:
+        - "Feature 1: Exercise"
+      description: Add a new exercise log
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExerciseLog'
+      responses:
+        201:
+          description: Exercise log created successfully
+        400:
+          description: Invalid input
+
+  /api/exercise-log/{exercise-log-id}:
+    delete:
+      tags:
+        - "Feature 1: Exercise"
+      description: Delete an exercise log by ID
+      parameters:
+        - in: path
+          name: exercise-log-id
+          description: ID of the exercise log to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Exercise log deleted successfully
+        404:
+          description: Exercise log not found
+        400:
+          description: Invalid exercise log ID
+
+  /api/exercise-performance/{user-id}:
+    get:
+      tags:
+        - "Feature 1: Exercise"
+      description: Calculate and save exercise performance for a user
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Exercise performance data saved successfully
+        400:
+          description: Invalid input
+
+  /api/{user-per-id}/exercise-performance/:
+    get:
+      tags:
+        - "Feature 1: Exercise"
+      description: Get exercise performance by user performance ID
+      parameters:
+        - in: path
+          name: user-per-id
+          description: ID of the user performance
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Exercise performance data for the user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExercisePerformanceTracking'
+        404:
+          description: User performance not found
+
+  /api/exercise-performance/{user-per-id}:
+    delete:
+      tags:
+        - "Feature 1: Exercise"
+      description: Delete exercise performance by ID
+      parameters:
+        - in: path
+          name: user-per-id
+          description: ID of the user performance to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Exercise performance data deleted successfully
+        404:
+          description: Exercise performance not found
+        400:
+          description: Invalid user performance ID
+
+  # Feature 2: Health
+  /api/health-goal:
+    get:
+      tags:
+        - "Feature 2: Health"
+      description: Get all health goals
+      responses:
+        200:
+          description: List of all health goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HealthGoal'
+
+    post:
+      tags:
+        - "Feature 2: Health"
+      description: Add a new health goal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HealthGoal'
+      responses:
+        201:
+          description: Health goal created successfully
+        400:
+          description: Invalid input
+
+    patch:
+      tags:
+        - "Feature 2: Health"
+      description: Update a health goal by ID
+      parameters:
+        - in: path
+          name: health-goal-id
+          description: ID of the health goal to update
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HealthGoal'
+      responses:
+        200:
+          description: Health goal updated successfully
+        404:
+          description: Health goal not found
+
+  /api/health-goal-and-log/{user-id}:
+    get:
+      tags:
+        - "Feature 2: Health"
+      description: Get health goal performance by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's health goal performance data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HealthGoalLogAndPerformance'
+        404:
+          description: User not found
+
+  /api/health-goal-and-log:
+    post:
+      tags:
+        - "Feature 2: Health"
+      description: Add health log and performance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HealthGoalLogAndPerformance'
+      responses:
+        201:
+          description: Health log and performance added successfully
+        400:
+          description: Invalid input
+
+  /api/health-goal-and-log/{health_goal_id}:
+    delete:
+      tags:
+        - "Feature 2: Health"
+      description: Delete health log and performance by health goal ID
+      parameters:
+        - in: path
+          name: health_goal_id
+          description: ID of the health goal to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Health log and performance deleted successfully
+        404:
+          description: Health goal not found
+        400:
+          description: Invalid health goal ID
+
+  # Feature 3: Diet
+  /api/diet-goal:
+    get:
+      tags:
+        - "Feature 3: Diet"
+      description: Get all diet goals
+      responses:
+        200:
+          description: List of all diet goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DietGoal'
+
+    post:
+      tags:
+        - "Feature 3: Diet"
+      description: Add a new diet goal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DietGoal'
+      responses:
+        201:
+          description: Diet goal created successfully
+        400:
+          description: Invalid input
+
+    patch:
+      tags:
+        - "Feature 3: Diet"
+      description: Update a diet goal by ID
+      parameters:
+        - in: path
+          name: diet-goal-id
+          description: ID of the diet goal to update
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DietGoal'
+      responses:
+        200:
+          description: Diet goal updated successfully
+        404:
+          description: Diet goal not found
+
+  /api/diet-goal-and-log/{user-id}:
+    get:
+      tags:
+        - "Feature 3: Diet"
+      description: Get diet goal performance by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's diet goal performance data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DietGoalLogAndPerformance'
+        404:
+          description: User not found
+
+  /api/diet-goal-and-log:
+    post:
+      tags:
+        - "Feature 3: Diet"
+      description: Add diet log and performance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DietGoalLogAndPerformance'
+      responses:
+        201:
+          description: Diet log and performance added successfully
+        400:
+          description: Invalid input
+
+  /api/diet-goal-and-log/{diet_goal_id}:
+    delete:
+      tags:
+        - "Feature 3: Diet"
+      description: Delete diet log and performance by diet goal ID
+      parameters:
+        - in: path
+          name: diet_goal_id
+          description: ID of the diet goal to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Diet log and performance deleted successfully
+        404:
+          description: Diet goal not found
+        400:
+          description: Invalid diet goal ID
+
+  # Feature 4: Sleep
+  /api/sleep-goal:
+    get:
+      tags:
+        - "Feature 4: Sleep"
+      description: Get all sleep goals
+      responses:
+        200:
+          description: List of all sleep goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SleepGoal'
+
+    post:
+      tags:
+        - "Feature 4: Sleep"
+      description: Add a new sleep goal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SleepGoal'
+      responses:
+        201:
+          description: Sleep goal created successfully
+        400:
+          description: Invalid input
+
+    patch:
+      tags:
+        - "Feature 4: Sleep"
+      description: Update a sleep goal by ID
+      parameters:
+        - in: path
+          name: sleep-goal-id
+          description: ID of the sleep goal to update
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SleepGoal'
+      responses:
+        200:
+          description: Sleep goal updated successfully
+        404:
+          description: Sleep goal not found
+
+  /api/sleep-goal-and-stats/{user-id}:
+    get:
+      tags:
+        - "Feature 4: Sleep"
+      description: Get sleep log and stats by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's sleep log and stats
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SleepGoalLogAndStat'
+        404:
+          description: User not found
+
+  /api/sleep-goal-and-stats:
+    post:
+      tags:
+        - "Feature 4: Sleep"
+      description: Add sleep log and stats
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SleepGoalLogAndStat'
+      responses:
+        201:
+          description: Sleep log and stats added successfully
+        400:
+          description: Invalid input
+
+  /api/sleep-goal-and-stats/{sleep_goal_id}:
+    delete:
+      tags:
+        - "Feature 4: Sleep"
+      description: Delete sleep log and stats by sleep goal ID
+      parameters:
+        - in: path
+          name: sleep_goal_id
+          description: ID of the sleep goal to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Sleep log and stats deleted successfully
+        404:
+          description: Sleep goal not found
+        400:
+          description: Invalid sleep goal ID
+
+
+  # Feature 5: Screen
+  /api/screen-time-goal:
+    post:
+      tags:
+        - "Feature 5: Screen"
+      description: Add a new screen time goal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScreenTimeGoal'
+      responses:
+        201:
+          description: Screen time goal created successfully
+        400:
+          description: Invalid input
+
+    get:
+      tags:
+        - "Feature 5: Screen"
+      description: Get all screen time goals
+      responses:
+        200:
+          description: List of all screen time goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ScreenTimeGoal'
+
+  /api/screen-time-goal/{screen-time-goal-id}:
+    patch:
+      tags:
+        - "Feature 5: Screen"
+      description: Update a screen time goal by ID
+      parameters:
+        - in: path
+          name: screen-time-goal-id
+          description: ID of the screen time goal to update
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScreenTimeGoal'
+      responses:
+        200:
+          description: Screen time goal updated successfully
+        404:
+          description: Screen time goal not found
+
+  /api/screen-time-goal-and-log/{user-id}:
+    get:
+      tags:
+        - "Feature 5: Screen"
+      description: Get screen time performance by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's screen time log and performance
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ScreenTimeLogAndPerformance'
+        404:
+          description: User not found
+
+  /api/screen-time-goal-and-log:
+    post:
+      tags:
+        - "Feature 5: Screen"
+      description: Add screen time log and performance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScreenTimeLogAndPerformance'
+      responses:
+        201:
+          description: Screen time log and performance added successfully
+        400:
+          description: Invalid input
+
+  /api/screen-time-goal-and-log/{screen_time_goal_id}:
+    delete:
+      tags:
+        - "Feature 5: Screen"
+      description: Delete screen time log and performance by screen time goal ID
+      parameters:
+        - in: path
+          name: screen_time_goal_id
+          description: ID of the screen time goal to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Screen time log and performance deleted successfully
+        404:
+          description: Screen time goal not found
+        400:
+          description: Invalid screen time goal ID
+
 #Feature 6: Water
   /api/water-goal:
     post:
@@ -407,6 +1022,128 @@ components:
         email:
           type: string
           example: joe@soap.com
+
+    ExerciseSchedule:
+      type: object
+      properties:
+        userId:
+          type: integer
+        exerciseType:
+          type: string
+        duration:
+          type: integer
+
+    ExerciseLog:
+        type: object
+        properties:
+          userId:
+            type: integer
+          exerciseId:
+            type: integer
+          status:
+            type: string
+
+    ExercisePerformanceTracking:
+        type: object
+        properties:
+          id:
+            type: integer
+          userPerId:
+            type: integer
+          performanceStatus:
+            type: string
+          achievedCount:
+            type: integer
+          missCount:
+            type: integer
+          checkedAt:
+            type: string
+            format: date-time
+
+    HealthGoal:
+      type: object
+      properties:
+        userId:
+          type: integer
+        healthGoalType:
+          type: string
+        targetValue:
+          type: integer
+
+    HealthGoalLogAndPerformance:
+        type: object
+        properties:
+          userId:
+            type: integer
+          healthGoalId:
+            type: integer
+          achievedValue:
+            type: integer
+
+
+    DietGoal:
+      type: object
+      properties:
+        userId:
+          type: integer
+        dietGoalType:
+          type: string
+        targetCalories:
+          type: integer
+
+    DietGoalLogAndPerformance:
+        type: object
+        properties:
+          userId:
+            type: integer
+          dietGoalId:
+            type: integer
+          caloriesConsumed:
+            type: integer
+
+    SleepGoal:
+      type: object
+      properties:
+        userId:
+          type: integer
+        targetSleepHours:
+          type: integer
+        targetSleepQuality:
+          type: string
+        targetSleepTiming:
+          type: string
+
+    SleepGoalLogAndStat:
+        type: object
+        properties:
+          userId:
+            type: integer
+          sleepGoalId:
+            type: integer
+          actualSleepHours:
+            type: integer
+          actualSleepQuality:
+            type: string
+          actualSleepTiming:
+            type: string
+
+    ScreenTimeGoal:
+      type: object
+      properties:
+        userId:
+          type: integer
+        targetScreenHours:
+          type: integer
+
+    ScreenTimeLogAndPerformance:
+        type: object
+        properties:
+          userId:
+            type: integer
+          screenTimeGoalId:
+            type: integer
+          actualScreenHours:
+            type: integer
 
     WaterGoal:
       type: object

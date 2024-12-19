@@ -1,11 +1,8 @@
 package ie.setu.domain.repository.water
 
-import ie.setu.domain.db.screentime.ScreenTimeGoals
 import ie.setu.domain.db.water.WaterGoals
-import ie.setu.domain.screentime.ScreenTimeGoal
 import ie.setu.domain.water.WaterGoal
 import ie.setu.utils.mapToWaterGoal
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.insert
