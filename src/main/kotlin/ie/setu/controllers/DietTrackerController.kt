@@ -24,6 +24,17 @@ object DietTrackerController {
         ctx.json(goal)
     }
 
+    fun getDietGoalsByUserId(ctx: Context) {
+
+        val goals = dietGoalDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (goals.isNotEmpty()) {
+            ctx.json(goals)
+            ctx.status(200)
+        } else {
+            ctx.status(404)
+        }
+
+    }
 
     fun addDietGoal(ctx: Context) {
         val diet_goal: DietGoal = jsonToObject(ctx.body())

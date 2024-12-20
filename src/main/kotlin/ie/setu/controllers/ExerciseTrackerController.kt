@@ -26,6 +26,17 @@ object ExerciseTrackerController {
         ctx.json(schedules)
     }
 
+    fun getExerciseScheduleByUserId(ctx: Context) {
+
+        val schedules = exercisescheduleDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (schedules.isNotEmpty()) {
+            ctx.json(schedules)
+            ctx.status(200)
+        } else {
+            ctx.status(404)
+        }
+
+    }
 
     fun addExerciseSchedule(ctx: Context) {
         val exercise_schedule: ExerciseSchedule = jsonToObject(ctx.body())
@@ -62,6 +73,18 @@ object ExerciseTrackerController {
             ctx.status(404)
         }
         ctx.json(logs)
+    }
+
+    fun getExerciseLogsByUserId(ctx: Context) {
+
+        val logs = exerciselogDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (logs.isNotEmpty()) {
+            ctx.json(logs)
+            ctx.status(200)
+        } else {
+            ctx.status(404)
+        }
+
     }
 
     fun addExerciseLog(ctx: Context) {

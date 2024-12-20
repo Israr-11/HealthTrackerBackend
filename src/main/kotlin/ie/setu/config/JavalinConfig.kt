@@ -32,7 +32,7 @@ class JavalinConfig {
         //---------------
         // User API paths
         //---------------
-        app.get("/api/users", UserController::getAllUsers)
+        app.get("/api/users/{email}", UserController::findByEmail)
         app.get("/api/users/{user-id}", UserController::getUserByUserId)
         app.post("/api/users", UserController::addUser)
         app.delete("/api/users/{user-id}", UserController::deleteUser)
@@ -43,10 +43,12 @@ class JavalinConfig {
         app.get("/api/exercise-schedule", ExerciseTrackerController::getAllExerciseSchedules)
         app.post("/api/exercise-schedule",ExerciseTrackerController::addExerciseSchedule )
         app.delete("/api/exercise-schedule/{exercise-schedule-id}",ExerciseTrackerController::deleteExerciseSchedule)
+        app.get("/api/exercise-schedule/{user-id}", ExerciseTrackerController::getExerciseScheduleByUserId)
 
         app.get("/api/exercise-log", ExerciseTrackerController::getAllExerciseLogs)
         app.post("/api/exercise-log",ExerciseTrackerController::addExerciseLog )
         app.delete("/api/exercise-log/{exercise-log-id}",ExerciseTrackerController::deleteEexerciseLog)
+        app.get("/api/exercise-log/{user-id}", ExerciseTrackerController::getExerciseLogsByUserId)
 
         app.get("/api/exercise-performance/{user-id}", ExerciseTrackerController::calculateAndSaveUserPerformance)
         app.get("/api/{user-per-id}/exercise-performance/", ExerciseTrackerController::getPerformanceByUserPerId)
@@ -58,6 +60,7 @@ class JavalinConfig {
         app.get("/api/health-goal", HealthTrackerController::getAllHealthGoal)
         app.post("/api/health-goal",HealthTrackerController::addHealthGoal)
         app.patch("/api/health-goal/{health-goal-id}", HealthTrackerController::updateHealthGoalByGoalId)
+        app.get("/api/health-goal/{user-id}", HealthTrackerController::getHealthGoalsByUserId)
 
         app.get("/api/health-goal-and-log/{user-id}", HealthTrackerController::getHealthPerformanceByUserId)
         app.post("/api/health-goal-and-log", HealthTrackerController::addHealthLogAndPerformance)
@@ -69,6 +72,7 @@ class JavalinConfig {
         app.get("/api/diet-goal", DietTrackerController::getAllDietGoal)
         app.post("/api/diet-goal",DietTrackerController::addDietGoal)
         app.patch("/api/diet-goal/{diet-goal-id}", DietTrackerController::updateDietGoalByGoalId)
+        app.get("/api/diet-goal/{user-id}", DietTrackerController::getDietGoalsByUserId)
 
         app.get("/api/diet-goal-and-log/{user-id}", DietTrackerController::getDietPerformanceByUserId)
         app.post("/api/diet-goal-and-log", DietTrackerController::addDietLogAndPerformance)
@@ -80,6 +84,7 @@ class JavalinConfig {
         app.get("/api/sleep-goal", SleepTrackerController::getAllSleepGoal)
         app.post("/api/sleep-goal",SleepTrackerController::addSleepGoal)
         app.patch("/api/sleep-goal/{sleep-goal-id}", SleepTrackerController::updateSleepGoalByGoalId)
+        app.get("/api/sleep-goal/{user-id}", SleepTrackerController::getSleepGoalByUserId)
 
         app.get("/api/sleep-goal-and-stats/{user-id}", SleepTrackerController::getSleepLogAndStatByUserId)
         app.post("/api/sleep-goal-and-stats", SleepTrackerController::addSleepLogAndStat)
@@ -91,6 +96,7 @@ class JavalinConfig {
         app.post("/api/screen-time-goal", ScreenTimeTrackerController::addScreenTimeGoal)
         app.get("/api/screen-time-goal",ScreenTimeTrackerController::getAllScreenTimeGoal)
         app.patch("/api/screen-time-goal/{screen-time-goal-id}", ScreenTimeTrackerController::updateScreenTimeGoalByGoalId)
+        app.get("/api/screen-time-goal/{user-id}", ScreenTimeTrackerController::getScreenTimeGoalsByUserId)
 
         app.get("/api/screen-time-goal-and-log/{user-id}", ScreenTimeTrackerController::getScreenTimePerformanceByUserId)
         app.post("/api/screen-time-goal-and-log", ScreenTimeTrackerController::addScreenTimeLogAndPerformance)
@@ -102,6 +108,7 @@ class JavalinConfig {
         app.post("/api/water-goal", WaterTrackerController::addWaterGoal)
         app.get("/api/water-goal",WaterTrackerController::getAllWaterGoal)
         app.patch("/api/water-goal/{water-goal-id}", WaterTrackerController::updateWaterGoalByGoalId)
+        app.get("/api/water-goal/{user-id}", WaterTrackerController::getWaterGoalByUserId)
 
         app.get("/api/water-goal-and-log/{user-id}", WaterTrackerController::getWaterPerformanceByUserId)
         app.post("/api/water-goal-and-log", WaterTrackerController::addWaterLogAndPerformance)
@@ -114,6 +121,7 @@ class JavalinConfig {
         app.post("/api/mental-health-goal", MentalHealthTrackerController::addMentalHealthGoal)
         app.get("/api/mental-health-goal", MentalHealthTrackerController::getAllMentalHealthGoals)
         app.patch("/api/mental-health-goal/{mental-health-goal-id}", MentalHealthTrackerController::updateMentalHealthGoalByGoalId)
+        app.get("/api/mental-health-goal/{user-id}", MentalHealthTrackerController::getMentalHealthGoalByUserId)
 
         app.get("/api/mental-health-goal-and-log/{user-id}", MentalHealthTrackerController::getMentalHealthPerformanceByUserId)
         app.post("/api/mental-health-goal-and-log", MentalHealthTrackerController::addMentalHealthLogAndPerformance)
@@ -125,6 +133,7 @@ class JavalinConfig {
         app.post("/api/walk-goal", WalkTrackerController::addWalkGoal)
         app.get("/api/walk-goal", WalkTrackerController::getAllWalkGoals)
         app.patch("/api/walk-goal/{walk-goal-id}", WalkTrackerController::updateWalkGoalByGoalId)
+        app.get("/api/walk-goal/{user-id}", WalkTrackerController::getWalkGoalByUserId)
 
         app.get("/api/walk-goal-and-log/{user-id}", WalkTrackerController::getWalkPerformanceByUserId)
         app.post("/api/walk-goal-and-log", WalkTrackerController::addWalkLogAndPerformance)

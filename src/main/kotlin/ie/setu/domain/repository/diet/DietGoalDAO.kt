@@ -3,7 +3,11 @@ package ie.setu.domain.repository.diet
 
 import ie.setu.domain.diet.DietGoal
 import ie.setu.domain.db.diet.DietGoals
+import ie.setu.domain.db.health.HealthGoals
+import ie.setu.domain.health.HealthGoal
 import ie.setu.utils.mapToDietGoal
+import ie.setu.utils.mapToHealthGoal
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.insert
@@ -25,8 +29,13 @@ class DietGoalDAO {
         return dietGoalList
     }
 
-
-
+    fun findByUserId(userId: Int): List<DietGoal>{
+        return transaction {
+            DietGoals
+                .selectAll().where { DietGoals.userId eq userId}
+                .map { mapToDietGoal(it) }
+        }
+    }
 
     fun save(diet_goal: DietGoal) : Int?{
         return transaction {

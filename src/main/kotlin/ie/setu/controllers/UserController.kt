@@ -10,15 +10,15 @@ object UserController {
 
     private val userDao = UserDAO()
 
-    fun getAllUsers(ctx: Context) {
-        val users = userDao.getAll()
-        if (users.size != 0) {
+    fun findByEmail(ctx: Context) {
+        val users = userDao.findByEmail(ctx.pathParam("email"))
+        if (users != null) {
+            ctx.json(users)
             ctx.status(200)
         }
-        else{
+        else {
             ctx.status(404)
         }
-        ctx.json(users)
     }
 
     fun getUserByUserId(ctx: Context) {

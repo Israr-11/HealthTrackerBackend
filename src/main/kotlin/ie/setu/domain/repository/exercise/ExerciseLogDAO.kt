@@ -2,7 +2,10 @@ package ie.setu.domain.repository.exercise
 
 import ie.setu.domain.exercise.ExerciseLog
 import ie.setu.domain.db.exercise.ExerciseLogs
+import ie.setu.domain.db.exercise.ExerciseSchedules
+import ie.setu.domain.exercise.ExerciseSchedule
 import ie.setu.utils.mapToExerciseLog
+import ie.setu.utils.mapToExerciseSchedule
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
@@ -27,7 +30,13 @@ class ExerciseLogDAO {
     }
 
 
-
+    fun findByUserId(userId: Int): List<ExerciseLog>{
+        return transaction {
+            ExerciseLogs
+                .selectAll().where { ExerciseLogs.userId eq userId}
+                .map { mapToExerciseLog(it) }
+        }
+    }
 
     fun save(exercise_log: ExerciseLog) : Int?{
         return transaction {

@@ -1,8 +1,12 @@
 package ie.setu.domain.repository.mentalhealth
 
 import ie.setu.domain.db.mentalhealth.MentalHealthGoals
+import ie.setu.domain.db.water.WaterGoals
 import ie.setu.domain.mentalhealth.MentalHealthGoal
+import ie.setu.domain.water.WaterGoal
 import ie.setu.utils.mapToMentalHealthGoal
+import ie.setu.utils.mapToWaterGoal
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.insert
@@ -21,6 +25,15 @@ class MentalHealthGoalDAO {
         }
         return mentalHealthGoalList
     }
+
+    fun findByUserId(userId: Int): List<MentalHealthGoal>{
+        return transaction {
+            MentalHealthGoals
+                .selectAll().where { MentalHealthGoals.userId eq userId}
+                .map { mapToMentalHealthGoal(it) }
+        }
+    }
+
 
     fun save(mentalHealthGoal: MentalHealthGoal): Int? {
         return transaction {

@@ -1,8 +1,12 @@
 package ie.setu.domain.repository.water
 
+import ie.setu.domain.db.sleep.SleepGoals
 import ie.setu.domain.db.water.WaterGoals
+import ie.setu.domain.sleep.SleepGoal
 import ie.setu.domain.water.WaterGoal
+import ie.setu.utils.mapToSleepGoal
 import ie.setu.utils.mapToWaterGoal
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.insert
@@ -24,7 +28,13 @@ class WaterGoalDAO {
         return WaterGoalsList
     }
 
-
+    fun findByUserId(userId: Int): List<WaterGoal>{
+        return transaction {
+            WaterGoals
+                .selectAll().where { WaterGoals.userId eq userId}
+                .map { mapToWaterGoal(it) }
+        }
+    }
 
 
     fun save(water_goal: WaterGoal) : Int?{

@@ -23,6 +23,18 @@ object WalkTrackerController {
         }
     }
 
+    fun getWalkGoalByUserId(ctx: Context) {
+
+        val logs = walkGoalDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (logs.isNotEmpty()) {
+            ctx.json(logs)
+            ctx.status(200)
+        } else {
+            ctx.status(404)
+        }
+
+    }
+
     fun addWalkGoal(ctx: Context) {
         val walkGoal: WalkGoal = jsonToObject(ctx.body())
         val walkGoalId = walkGoalDAO.save(walkGoal)

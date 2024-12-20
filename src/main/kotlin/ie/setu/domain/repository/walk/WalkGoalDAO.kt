@@ -1,8 +1,12 @@
 package ie.setu.domain.repository.walk
 
+import ie.setu.domain.db.mentalhealth.MentalHealthGoals
 import ie.setu.domain.db.walk.WalkGoals
+import ie.setu.domain.mentalhealth.MentalHealthGoal
 import ie.setu.domain.walk.WalkGoal
+import ie.setu.utils.mapToMentalHealthGoal
 import ie.setu.utils.mapToWalkGoal
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.insert
@@ -20,6 +24,14 @@ class WalkGoalDAO {
             }
         }
         return walkGoalsList
+    }
+
+    fun findByUserId(userId: Int): List<WalkGoal>{
+        return transaction {
+            WalkGoals
+                .selectAll().where { WalkGoals.userId eq userId}
+                .map { mapToWalkGoal(it) }
+        }
     }
 
     fun save(walkGoal: WalkGoal): Int? {

@@ -23,6 +23,17 @@ object ScreenTimeTrackerController {
         ctx.json(goal)
     }
 
+    fun getScreenTimeGoalsByUserId(ctx: Context) {
+
+        val logs = screenTimeGoalDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (logs.isNotEmpty()) {
+            ctx.json(logs)
+            ctx.status(200)
+        } else {
+            ctx.status(404)
+        }
+
+    }
 
     fun addScreenTimeGoal(ctx: Context) {
         val screen_time_goal: ScreenTimeGoal = jsonToObject(ctx.body())

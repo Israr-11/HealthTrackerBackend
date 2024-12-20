@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5a477f-7f44-4373-8657-59415ceeea61" name="Changes" comment="github actions - add kdoc comments">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/WaterTrackerControllerTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health-tracker-rest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/health-tracker-rest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/DietTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/DietTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ExerciseTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ExerciseTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/MentalHealthTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/MentalHealthTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ScreenTimeTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ScreenTimeTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/SleepTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/SleepTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WalkTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WalkTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WaterTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WaterTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/UserDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/UserDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/diet/DietGoalDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/diet/DietGoalDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/exercise/ExerciseLogDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/exercise/ExerciseLogDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/exercise/ExerciseScheduleDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/exercise/ExerciseScheduleDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/health/HealthGoalDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/health/HealthGoalDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/mentalhealth/MentalHealthGoalDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/mentalhealth/MentalHealthGoalDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/screentime/ScreenTimeGoalDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/screentime/ScreenTimeGoalDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/sleep/SleepGoalDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/sleep/SleepGoalDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/walk/WalkGoalDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/walk/WalkGoalDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/water/WaterGoalDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/water/WaterGoalDAO.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +91,7 @@
 }</component>
   <component name="ProblemsViewState">
     <option name="proportion" value="0.9" />
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
     <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
@@ -186,7 +206,7 @@
       <recent name="ie.setu.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WaterTrackerControllerTest">
+  <component name="RunManager" selected="JUnit.repository in HealthTrackerBackend">
     <configuration name="WalkGoalDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
       <extension name="coverage">
@@ -242,10 +262,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WaterTrackerControllerTest" />
         <item itemvalue="JUnit.repository in HealthTrackerBackend" />
         <item itemvalue="JUnit.controllers in HealthTrackerBackend" />
         <item itemvalue="Kotlin.AppKt" />
+        <item itemvalue="JUnit.WaterTrackerControllerTest" />
         <item itemvalue="JUnit.WalkGoalDAOTest" />
       </list>
     </recent_temporary>
@@ -290,7 +310,9 @@
       <workItem from="1734341671201" duration="23354000" />
       <workItem from="1734376898736" duration="5798000" />
       <workItem from="1734630904125" duration="437000" />
-      <workItem from="1734631827110" duration="1458000" />
+      <workItem from="1734631827110" duration="2312000" />
+      <workItem from="1734686048290" duration="439000" />
+      <workItem from="1734693878483" duration="13549000" />
     </task>
     <task id="LOCAL-00001" summary="Add endpoints, get one by email, delete one, update one">
       <option name="closed" value="true" />
@@ -503,6 +525,9 @@
     <SUITE FILE_PATH="coverage/health_tracker_rest$UserDAOTest.ic" NAME="UserDAOTest Coverage Results" MODIFIED="1728647030631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ie.setu.repository.*</FILTER>
       <FILTER>ie.setu.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/HealthTrackerBackend$WaterTrackerControllerTest.ic" NAME="WaterTrackerControllerTest Coverage Results" MODIFIED="1734633326241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ie.setu.controllers.*</FILTER>
     </SUITE>
   </component>
 </project>

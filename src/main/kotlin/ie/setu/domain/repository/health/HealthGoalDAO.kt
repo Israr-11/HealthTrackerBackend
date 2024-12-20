@@ -1,9 +1,13 @@
 
 package ie.setu.domain.repository.health
 
+import ie.setu.domain.db.exercise.ExerciseSchedules
 import ie.setu.domain.health.HealthGoal
 import ie.setu.domain.db.health.HealthGoals
+import ie.setu.domain.exercise.ExerciseSchedule
+import ie.setu.utils.mapToExerciseSchedule
 import ie.setu.utils.mapToHealthGoal
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.insert
@@ -26,7 +30,13 @@ class HealthGoalDAO {
     }
 
 
-
+    fun findByUserId(userId: Int): List<HealthGoal>{
+        return transaction {
+            HealthGoals
+                .selectAll().where { HealthGoals.userId eq userId}
+                .map { mapToHealthGoal(it) }
+        }
+    }
 
     fun save(health_goal: HealthGoal) : Int?{
         return transaction {

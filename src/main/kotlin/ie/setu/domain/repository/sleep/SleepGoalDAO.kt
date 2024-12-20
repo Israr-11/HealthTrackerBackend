@@ -1,8 +1,12 @@
 package ie.setu.domain.repository.sleep
 
+import ie.setu.domain.db.diet.DietGoals
 import ie.setu.domain.sleep.SleepGoal
 import ie.setu.domain.db.sleep.SleepGoals
+import ie.setu.domain.diet.DietGoal
+import ie.setu.utils.mapToDietGoal
 import ie.setu.utils.mapToSleepGoal
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.insert
@@ -24,6 +28,13 @@ class SleepGoalDAO {
         return sleepGoalList
     }
 
+    fun findByUserId(userId: Int): List<SleepGoal>{
+        return transaction {
+            SleepGoals
+                .selectAll().where { SleepGoals.userId eq userId}
+                .map { mapToSleepGoal(it) }
+        }
+    }
 
     fun save(sleep_goal: SleepGoal) : Int?{
         return transaction {

@@ -23,6 +23,17 @@ object WaterTrackerController {
         ctx.json(goal)
     }
 
+    fun getWaterGoalByUserId(ctx: Context) {
+
+        val logs = waterGoalDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (logs.isNotEmpty()) {
+            ctx.json(logs)
+            ctx.status(200)
+        } else {
+            ctx.status(404)
+        }
+
+    }
 
     fun addWaterGoal(ctx: Context) {
         val water_goal: WaterGoal = jsonToObject(ctx.body())
