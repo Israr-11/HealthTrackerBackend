@@ -44,7 +44,9 @@ The **HealthTracker Backend** is built using the following technologies:
   Maven manages project dependencies, builds the project, and runs tests. It ensures a consistent build process across all environments.
 
 ## API Testing
-Swagger API documentation is added to the project via the file named as health-tracker-rest.yaml
+Swagger API documentation is added to the project via the file named health-tracker-rest.yaml
+
+There is also a deployed version of the postman file that can be found on this link: https://app.swaggerhub.com/apis/ISRARAHMEDPK000/health-tracker_api/1.0.0#/Users/get_api_users__user_id_
 
 ## Prerequisites
 
