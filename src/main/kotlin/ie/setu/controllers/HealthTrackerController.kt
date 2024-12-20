@@ -23,7 +23,17 @@ object HealthTrackerController {
         ctx.json(goal)
     }
 
+    fun getHealthGoalsByUserId(ctx: Context) {
 
+        val logs = healthGoalDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (logs.isNotEmpty()) {
+            ctx.json(logs)
+            ctx.status(200)
+        } else {
+            ctx.status(404)
+        }
+
+    }
     fun addHealthGoal(ctx: Context) {
         val health_goal: HealthGoal = jsonToObject(ctx.body())
         val healthGoalId = healthGoalDAO.save(health_goal)

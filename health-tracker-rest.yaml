@@ -32,18 +32,25 @@ paths:
       responses:
         200:
           description: The user has been created
+  /api/users/{email}:
     get:
       tags:
         - "Users"
+      description: Find a user by their email
+      parameters:
+        - name: email
+          in: path
+          required: true
+          description: The email of the user to find
+          schema:
+            type: string
       responses:
         200:
-          description: This is a list of the users in the app
+          description: The user details for the specified email
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/User'
 
 
   # Feature 1: Exercise
@@ -97,6 +104,30 @@ paths:
         400:
           description: Invalid exercise schedule ID
 
+  /api/exercise-schedule/{user-id}:
+    get:
+      tags:
+        - "Feature 1: Exercise"
+      description: Get exercise schedules for a specific user
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: List of exercise schedules for the user
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExerciseSchedule'
+        404:
+          description: User not found or no schedules available
+
   /api/exercise-log:
     get:
       tags:
@@ -147,11 +178,11 @@ paths:
         400:
           description: Invalid exercise log ID
 
-  /api/exercise-performance/{user-id}:
+  /api/exercise-log/{user-id}:
     get:
       tags:
         - "Feature 1: Exercise"
-      description: Calculate and save exercise performance for a user
+      description: Get exercise logs for a specific user
       parameters:
         - in: path
           name: user-id
@@ -161,164 +192,130 @@ paths:
             type: integer
       responses:
         200:
-          description: Exercise performance data saved successfully
-        400:
-          description: Invalid input
-
-  /api/{user-per-id}/exercise-performance/:
-    get:
-      tags:
-        - "Feature 1: Exercise"
-      description: Get exercise performance by user performance ID
-      parameters:
-        - in: path
-          name: user-per-id
-          description: ID of the user performance
-          required: true
-          schema:
-            type: integer
-      responses:
-        200:
-          description: Exercise performance data for the user
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExercisePerformanceTracking'
-        404:
-          description: User performance not found
-
-  /api/exercise-performance/{user-per-id}:
-    delete:
-      tags:
-        - "Feature 1: Exercise"
-      description: Delete exercise performance by ID
-      parameters:
-        - in: path
-          name: user-per-id
-          description: ID of the user performance to delete
-          required: true
-          schema:
-            type: integer
-      responses:
-        200:
-          description: Exercise performance data deleted successfully
-        404:
-          description: Exercise performance not found
-        400:
-          description: Invalid user performance ID
-
-  # Feature 2: Health
-  /api/health-goal:
-    get:
-      tags:
-        - "Feature 2: Health"
-      description: Get all health goals
-      responses:
-        200:
-          description: List of all health goals
+          description: List of exercise logs for the user
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/HealthGoal'
-
-    post:
-      tags:
-        - "Feature 2: Health"
-      description: Add a new health goal
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/HealthGoal'
-      responses:
-        201:
-          description: Health goal created successfully
-        400:
-          description: Invalid input
-
-    patch:
-      tags:
-        - "Feature 2: Health"
-      description: Update a health goal by ID
-      parameters:
-        - in: path
-          name: health-goal-id
-          description: ID of the health goal to update
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/HealthGoal'
-      responses:
-        200:
-          description: Health goal updated successfully
+                  $ref: '#/components/schemas/ExerciseLog'
         404:
-          description: Health goal not found
+          description: User not found or no logs available
+
+    # Feature 2: Health
+  /api/health-goal/{user-id}:
+      get:
+        tags:
+          - "Feature 2: Health"
+        description: Get health goals for a specific user by user ID
+        parameters:
+          - in: path
+            name: user-id
+            description: ID of the user whose health goals need to be fetched
+            required: true
+            schema:
+              type: integer
+        responses:
+          200:
+            description: Health goals fetched successfully
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/HealthGoal'
+          404:
+            description: User or health goals not found
+          400:
+            description: Invalid input
+
+  /api/health-goal:
+      get:
+        tags:
+          - "Feature 2: Health"
+        description: Get all health goals
+        responses:
+          200:
+            description: List of all health goals
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/HealthGoal'
+
+      post:
+        tags:
+          - "Feature 2: Health"
+        description: Add a new health goal
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthGoal'
+        responses:
+          201:
+            description: Health goal created successfully
+          400:
+            description: Invalid input
 
   /api/health-goal-and-log/{user-id}:
-    get:
-      tags:
-        - "Feature 2: Health"
-      description: Get health goal performance by user ID
-      parameters:
-        - in: path
-          name: user-id
-          description: ID of the user
-          required: true
-          schema:
-            type: integer
-      responses:
-        200:
-          description: User's health goal performance data
+      get:
+        tags:
+          - "Feature 2: Health"
+        description: Get health goal performance by user ID
+        parameters:
+          - in: path
+            name: user-id
+            description: ID of the user
+            required: true
+            schema:
+              type: integer
+        responses:
+          200:
+            description: User's health goal performance data
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/HealthGoalLogAndPerformance'
+          404:
+            description: User not found
+
+  /api/health-goal-and-log:
+      post:
+        tags:
+          - "Feature 2: Health"
+        description: Add health log and performance
+        requestBody:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/HealthGoalLogAndPerformance'
-        404:
-          description: User not found
-
-  /api/health-goal-and-log:
-    post:
-      tags:
-        - "Feature 2: Health"
-      description: Add health log and performance
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/HealthGoalLogAndPerformance'
-      responses:
-        201:
-          description: Health log and performance added successfully
-        400:
-          description: Invalid input
+                $ref: '#/components/schemas/HealthGoalLogAndPerformance'
+        responses:
+          201:
+            description: Health log and performance added successfully
+          400:
+            description: Invalid input
 
   /api/health-goal-and-log/{health_goal_id}:
-    delete:
-      tags:
-        - "Feature 2: Health"
-      description: Delete health log and performance by health goal ID
-      parameters:
-        - in: path
-          name: health_goal_id
-          description: ID of the health goal to delete
-          required: true
-          schema:
-            type: integer
-      responses:
-        204:
-          description: Health log and performance deleted successfully
-        404:
-          description: Health goal not found
-        400:
-          description: Invalid health goal ID
+      delete:
+        tags:
+          - "Feature 2: Health"
+        description: Delete health log and performance by health goal ID
+        parameters:
+          - in: path
+            name: health_goal_id
+            description: ID of the health goal to delete
+            required: true
+            schema:
+              type: integer
+        responses:
+          204:
+            description: Health log and performance deleted successfully
+          404:
+            description: Health goal not found
+          400:
+            description: Invalid health goal ID
 
   # Feature 3: Diet
   /api/diet-goal:
@@ -351,6 +348,7 @@ paths:
         400:
           description: Invalid input
 
+  /api/diet-goal/{diet-goal-id}:
     patch:
       tags:
         - "Feature 3: Diet"
@@ -372,6 +370,32 @@ paths:
           description: Diet goal updated successfully
         404:
           description: Diet goal not found
+
+  /api/diet-goal/{user-id}:
+    get:
+      tags:
+        - "Feature 3: Diet"
+      description: Get diet goals for a specific user by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user whose diet goals need to be fetched
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: List of user's diet goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DietGoal'
+        404:
+          description: User or diet goals not found
+        400:
+          description: Invalid input
 
   /api/diet-goal-and-log/{user-id}:
     get:
@@ -434,6 +458,7 @@ paths:
           description: Invalid diet goal ID
 
   # Feature 4: Sleep
+  # Feature 4: Sleep
   /api/sleep-goal:
     get:
       tags:
@@ -464,6 +489,7 @@ paths:
         400:
           description: Invalid input
 
+  /api/sleep-goal/{sleep-goal-id}:
     patch:
       tags:
         - "Feature 4: Sleep"
@@ -546,12 +572,36 @@ paths:
         400:
           description: Invalid sleep goal ID
 
+    # Feature 5: Screen Time
 
-  # Feature 5: Screen
+  /api/screen-time-goal/{user-id}:
+    get:
+      tags:
+        - "Feature 5: Screen Time"
+      description: Get screen time goals for a specific user
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user whose screen time goals are being fetched
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's screen time goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ScreenTimeGoal'
+        404:
+          description: User not found
+
   /api/screen-time-goal:
     post:
       tags:
-        - "Feature 5: Screen"
+        - "Feature 5: Screen Time"
       description: Add a new screen time goal
       requestBody:
         content:
@@ -566,7 +616,7 @@ paths:
 
     get:
       tags:
-        - "Feature 5: Screen"
+        - "Feature 5: Screen Time"
       description: Get all screen time goals
       responses:
         200:
@@ -581,7 +631,7 @@ paths:
   /api/screen-time-goal/{screen-time-goal-id}:
     patch:
       tags:
-        - "Feature 5: Screen"
+        - "Feature 5: Screen Time"
       description: Update a screen time goal by ID
       parameters:
         - in: path
@@ -604,7 +654,7 @@ paths:
   /api/screen-time-goal-and-log/{user-id}:
     get:
       tags:
-        - "Feature 5: Screen"
+        - "Feature 5: Screen Time"
       description: Get screen time performance by user ID
       parameters:
         - in: path
@@ -628,7 +678,7 @@ paths:
   /api/screen-time-goal-and-log:
     post:
       tags:
-        - "Feature 5: Screen"
+        - "Feature 5: Screen Time"
       description: Add screen time log and performance
       requestBody:
         content:
@@ -644,7 +694,7 @@ paths:
   /api/screen-time-goal-and-log/{screen_time_goal_id}:
     delete:
       tags:
-        - "Feature 5: Screen"
+        - "Feature 5: Screen Time"
       description: Delete screen time log and performance by screen time goal ID
       parameters:
         - in: path
@@ -661,7 +711,30 @@ paths:
         400:
           description: Invalid screen time goal ID
 
-#Feature 6: Water
+  #Feature 6: Water
+  /api/water-goal/{user-id}:
+    get:
+      tags:
+        - "Feature 6: Water"
+      description: Get water goals for a specific user by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user whose water goals are being fetched
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's water goals retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WaterGoal'
+        404:
+          description: User not found
   /api/water-goal:
     post:
       tags:
@@ -773,6 +846,30 @@ paths:
           description: Water goal not found
 
   #Feature 7: Mental Health
+  /api/mental-health-goal/{user-id}:
+    get:
+      tags:
+        - "Feature 7: Mental Health"
+      description: Get mental health goals for a specific user by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user whose mental health goals are being fetched
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's health goals retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MentalHealthGoal'
+        404:
+          description: User not found
+
   /api/mental-health-goal:
     summary: "Mental Health Goal Operations"
     description: "This section handles operations related to mental health goals such as creating, retrieving, updating, and deleting mental health goals."
@@ -884,6 +981,32 @@ paths:
           description: Mental health log and performance deleted successfully
         404:
           description: Mental health goal not found
+
+  # Features 8: Walk
+
+  /api/walk-goal/{user-id}:
+    get:
+      tags:
+        - "Feature 8: Walk"
+      description: Get walk goals for a specific user by user ID
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user whose walk goals are being fetched
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User's walk goals retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WalkGoal'
+        404:
+          description: User not found
 
   /api/walk-goal:
     summary: "Walk Goal Operations"

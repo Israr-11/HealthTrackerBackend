@@ -23,6 +23,18 @@ object MentalHealthTrackerController {
         ctx.json(goals)
     }
 
+    fun getMentalHealthGoalByUserId(ctx: Context) {
+
+        val logs = mentalHealthGoalDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (logs.isNotEmpty()) {
+            ctx.json(logs)
+            ctx.status(200)
+        } else {
+            ctx.status(404)
+        }
+
+    }
+
     fun addMentalHealthGoal(ctx: Context) {
         val mental_health_goal: MentalHealthGoal = jsonToObject(ctx.body())
         val mentalHealthGoalId = mentalHealthGoalDAO.save(mental_health_goal)

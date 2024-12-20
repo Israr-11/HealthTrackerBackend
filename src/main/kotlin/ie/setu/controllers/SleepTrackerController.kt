@@ -25,6 +25,17 @@ object SleepTrackerController {
         ctx.json(goal)
     }
 
+    fun getSleepGoalByUserId(ctx: Context) {
+
+        val logs = sleepGoalDAO.findByUserId(ctx.pathParam("user-id").toInt())
+        if (logs.isNotEmpty()) {
+            ctx.json(logs)
+            ctx.status(200)
+        } else {
+            ctx.status(404)
+        }
+
+    }
 
     fun addSleepGoal(ctx: Context) {
         val sleep_goal: SleepGoal = jsonToObject(ctx.body())

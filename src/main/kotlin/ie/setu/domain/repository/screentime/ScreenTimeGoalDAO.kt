@@ -1,8 +1,12 @@
 package ie.setu.domain.repository.screentime
 
+import ie.setu.domain.db.health.HealthGoals
 import ie.setu.domain.db.screentime.ScreenTimeGoals
+import ie.setu.domain.health.HealthGoal
 import ie.setu.domain.screentime.ScreenTimeGoal
+import ie.setu.utils.mapToHealthGoal
 import ie.setu.utils.mapToScreenTimeGoal
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.insert
@@ -25,6 +29,13 @@ class ScreenTimeGoalDAO {
     }
 
 
+    fun findByUserId(userId: Int): List<ScreenTimeGoal>{
+        return transaction {
+            ScreenTimeGoals
+                .selectAll().where { ScreenTimeGoals.userId eq userId}
+                .map { mapToScreenTimeGoal(it) }
+        }
+    }
 
 
     fun save(screen_time_goal: ScreenTimeGoal) : Int?{
