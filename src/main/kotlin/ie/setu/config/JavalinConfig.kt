@@ -11,9 +11,9 @@ class JavalinConfig {
         //added this jsonMapper for our integration tests - serialise objects to json
         it.jsonMapper(JavalinJackson(jsonObjectMapper()))
         it.bundledPlugins.enableCors { cors ->
-            cors.addRule { crs ->
-                crs.allowHost("*")
-                crs.allowCredentials = true
+            cors.addRule { cors_enable ->
+                cors_enable.allowHost("http://localhost:5173/")
+                cors_enable.allowCredentials = true
             }
         }
     }.apply {

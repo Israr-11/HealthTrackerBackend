@@ -186,7 +186,7 @@
       <recent name="ie.setu.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.repository in HealthTrackerBackend">
+  <component name="RunManager" selected="Kotlin.AppKt">
     <configuration name="WalkGoalDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
       <extension name="coverage">
@@ -242,9 +242,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.AppKt" />
         <item itemvalue="JUnit.repository in HealthTrackerBackend" />
         <item itemvalue="JUnit.controllers in HealthTrackerBackend" />
-        <item itemvalue="Kotlin.AppKt" />
         <item itemvalue="JUnit.WaterTrackerControllerTest" />
         <item itemvalue="JUnit.WalkGoalDAOTest" />
       </list>
@@ -293,7 +293,7 @@
       <workItem from="1734631827110" duration="2312000" />
       <workItem from="1734686048290" duration="439000" />
       <workItem from="1734693878483" duration="15044000" />
-      <workItem from="1734773964938" duration="1819000" />
+      <workItem from="1734773964938" duration="2913000" />
     </task>
     <task id="LOCAL-00001" summary="Add endpoints, get one by email, delete one, update one">
       <option name="closed" value="true" />
