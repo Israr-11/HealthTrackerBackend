@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: Health Tracker API
-  description: This API provides endpoints for handling CRUD operations on the Health Tracker data.
+  description: This swagger documentation provides all the API endpoints for all 8 features implemented in the backend
 servers:
   - url: http://localhost:7001
 paths:
@@ -201,6 +201,68 @@ paths:
                   $ref: '#/components/schemas/ExerciseLog'
         404:
           description: User not found or no logs available
+
+  # New Endpoints for Exercise Performance Tracking
+  /api/exercise-performance/{user-id}:
+    get:
+      tags:
+        - "Feature 1: Exercise"
+      description: Calculate and save exercise performance for a specific user
+      parameters:
+        - in: path
+          name: user-id
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Exercise performance data calculated and saved successfully
+        404:
+          description: User not found
+
+  /api/{user-per-id}/exercise-performance/:
+    get:
+      tags:
+        - "Feature 1: Exercise"
+      description: Get performance details by user performance ID
+      parameters:
+        - in: path
+          name: user-per-id
+          description: ID of the user performance
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Exercise performance data fetched successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExercisePerformanceTracking'
+        404:
+          description: User performance not found
+
+  /api/exercise-performance/{user-per-id}:
+    delete:
+      tags:
+        - "Feature 1: Exercise"
+      description: Delete exercise performance tracking by ID
+      parameters:
+        - in: path
+          name: user-per-id
+          description: ID of the user performance to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Exercise performance deleted successfully
+        404:
+          description: Exercise performance not found
+        400:
+          description: Invalid exercise performance ID
+
 
     # Feature 2: Health
   /api/health-goal/{user-id}:
@@ -458,7 +520,6 @@ paths:
           description: Invalid diet goal ID
 
   # Feature 4: Sleep
-  # Feature 4: Sleep
   /api/sleep-goal:
     get:
       tags:
@@ -489,28 +550,29 @@ paths:
         400:
           description: Invalid input
 
-  /api/sleep-goal/{sleep-goal-id}:
-    patch:
+  /api/sleep-goal/{user-id}:
+    get:
       tags:
         - "Feature 4: Sleep"
-      description: Update a sleep goal by ID
+      description: Get sleep goal by User ID
       parameters:
         - in: path
-          name: sleep-goal-id
-          description: ID of the sleep goal to update
+          name: user-id
+          description: ID of the user
           required: true
           schema:
             type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SleepGoal'
       responses:
         200:
-          description: Sleep goal updated successfully
+          description: User's sleep goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SleepGoal'
         404:
-          description: Sleep goal not found
+          description: User not found
 
   /api/sleep-goal-and-stats/{user-id}:
     get:
@@ -1169,8 +1231,6 @@ components:
     ExercisePerformanceTracking:
         type: object
         properties:
-          id:
-            type: integer
           userPerId:
             type: integer
           performanceStatus:
@@ -1179,9 +1239,6 @@ components:
             type: integer
           missCount:
             type: integer
-          checkedAt:
-            type: string
-            format: date-time
 
     HealthGoal:
       type: object
