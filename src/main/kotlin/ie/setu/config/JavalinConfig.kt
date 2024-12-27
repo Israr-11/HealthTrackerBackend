@@ -12,6 +12,7 @@ class JavalinConfig {
         it.jsonMapper(JavalinJackson(jsonObjectMapper()))
         it.bundledPlugins.enableCors { cors ->
             cors.addRule { cors_enable ->
+                cors_enable.allowHost("https://health-tracker-application.netlify.app/")
                 cors_enable.allowHost("http://localhost:5173/")
                 cors_enable.allowCredentials = true
             }
