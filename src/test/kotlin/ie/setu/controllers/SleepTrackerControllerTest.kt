@@ -104,7 +104,7 @@ class SleepTrackerControllerTest {
             val addResponse = addSleepLog(
 
                 userId= 3,
-            sleepGoalId= 1,
+            sleepGoalId= 7,
             actualSleepHours=7,
             actualSleepQuality="good",
             actualSleepTiming="night"
@@ -147,7 +147,7 @@ class SleepTrackerControllerTest {
         @Test
         fun `delete a sleep log by valid sleep goal id, returns 204 response`() {
 
-            val validSleepGoalId = 1
+            val validSleepGoalId = 7
 
             val deleteResponse = deleteSleepLogBySleepGoalId(validSleepGoalId)
 

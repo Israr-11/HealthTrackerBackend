@@ -60,7 +60,7 @@ class MentalHealthTrackerControllerTest {
 
             val addResponse = createMentalHealthLog(
                 userId = 3,
-                mentalHealthGoalId = 1,
+                mentalHealthGoalId = 20,
                 moodScore = 7
             )
             assertEquals(201, addResponse.status)

@@ -60,7 +60,7 @@ class WalkTrackerControllerTest {
 
             val addResponse = createWalkLog(
                 userId = 3,
-                walkGoalId = 1,
+                walkGoalId = 11,
                 actualSteps = 10500
             )
             assertEquals(201, addResponse.status)
