@@ -46,8 +46,8 @@ object DietTrackerController {
                 mapOf(
                     "id" to diet_goal.id,
                     "userId" to diet_goal.userId,
-                    "dietGoalType " to diet_goal.dietGoalType,
-                    "targetCalories " to diet_goal.targetCalories,
+                    "dietGoalType" to diet_goal.dietGoalType,
+                    "targetCalories" to diet_goal.targetCalories,
                     "entryTime" to DateTime.now()
                 )
             )
