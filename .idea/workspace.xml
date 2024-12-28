@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ff5a477f-7f44-4373-8657-59415ceeea61" name="Changes" comment="github actions - add kdoc comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/diet/DietGoalLogAndPerformanceDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/diet/DietGoalLogAndPerformanceDAO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/MentalHealthTrackerControllerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/MentalHealthTrackerControllerTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/SleepTrackerControllerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/SleepTrackerControllerTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/WalkTrackerControllerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/WalkTrackerControllerTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/DietTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/DietTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ExerciseTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ExerciseTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/MentalHealthTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/MentalHealthTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ScreenTimeTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ScreenTimeTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/SleepTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/SleepTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WalkTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WalkTrackerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WaterTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WaterTrackerController.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,89 +92,89 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.ActivityDAOTest.executor": "Run",
-    "JUnit.AddUserTest.addUser.executor": "Run",
-    "JUnit.AddUserTest.executor": "Run",
-    "JUnit.All in HealthTrackerBackend.executor": "Run",
-    "JUnit.ExerciseLogDAOTest.executor": "Run",
-    "JUnit.ExercisePerformanceDAOTest.executor": "Run",
-    "JUnit.ExercisePerformanceTrackingDAOTest.executor": "Run",
-    "JUnit.ExerciseScheduleDAOTest (1).executor": "Run",
-    "JUnit.ExerciseScheduleDAOTest.executor": "Run",
-    "JUnit.HealthGoalDAOTest (1).executor": "Run",
-    "JUnit.HealthGoalDAOTest.executor": "Run",
-    "JUnit.HealthGoalLogAndPerformanceDAOTest (1).executor": "Run",
-    "JUnit.HealthGoalLogAndPerformanceDAOTest.executor": "Coverage",
-    "JUnit.HealthTrackerControllerTest$CreateActivities.add an activity when a user exists for it, returns a 201 response.executor": "Run",
-    "JUnit.HealthTrackerControllerTest$CreateUsers.executor": "Run",
-    "JUnit.HealthTrackerControllerTest$DeleteActivities.executor": "Run",
-    "JUnit.HealthTrackerControllerTest$DeleteUsers.executor": "Run",
-    "JUnit.HealthTrackerControllerTest$ReadActivities.get all activities by user id when user and activities exists returns 200 response.executor": "Run",
-    "JUnit.HealthTrackerControllerTest$ReadActivities.get all activities from the database returns 200 or 404 response.executor": "Run",
-    "JUnit.HealthTrackerControllerTest$UpdateActivities.executor": "Run",
-    "JUnit.HealthTrackerControllerTest$UpdateUsers.executor": "Run",
-    "JUnit.HealthTrackerControllerTest.executor": "Run",
-    "JUnit.HealthTrackerControllerTest.get all users from the database returns 200 or 404 response.executor": "Run",
-    "JUnit.HealthTrackerControllerTestMockDB.executor": "Run",
-    "JUnit.HealthTrackerControllerTestMockDB.getting a user by id when id exists, returns a 200 response.executor": "Run",
-    "JUnit.MentalHealthGoalDAOTest.executor": "Run",
-    "JUnit.MentalHealthTrackerControllerTest.executor": "Run",
-    "JUnit.ScreenTimeGoalDAOTest (1).executor": "Run",
-    "JUnit.ScreenTimeGoalDAOTest.executor": "Profiler#1",
-    "JUnit.ScreenTimeGoalLogAndPerformanceDAOTest.executor": "Run",
-    "JUnit.ScreenTimeTrackerControllerTest.executor": "Coverage",
-    "JUnit.SleepGoalDAOTest.executor": "Coverage",
-    "JUnit.SleepLogAndStatDAO.executor": "Run",
-    "JUnit.SleepTrackerControllerTest$DeleteSleepLogBySleepGoalId.delete a sleep log by valid sleep goal id, returns 204 response.executor": "Run",
-    "JUnit.SleepTrackerControllerTest.executor": "Run",
-    "JUnit.UserDAOTest.executor": "Run",
-    "JUnit.WalkGoalDAOTest$ReadWalkGoals.executor": "Run",
-    "JUnit.WalkGoalDAOTest$ReadWalkGoals.get all goals from populated table.executor": "Run",
-    "JUnit.WalkGoalDAOTest.executor": "Run",
-    "JUnit.WalkGoalLogAndStatsDAOTest.executor": "Run",
-    "JUnit.WalkTrackerControllerTest.executor": "Run",
-    "JUnit.WaterTrackerControllerTest.executor": "Run",
-    "JUnit.controllers in HealthTrackerBackend.executor": "Coverage",
-    "JUnit.mentalhealth in HealthTrackerBackend.executor": "Run",
-    "JUnit.repository in HealthTrackerBackend.executor": "Coverage",
-    "JUnit.walk in HealthTrackerBackend.executor": "Run",
-    "JUnit.water in HealthTrackerBackend.executor": "Run",
-    "Kotlin.AppKt (1).executor": "Run",
-    "Kotlin.AppKt.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.health-tracker-rest [clean].executor": "Run",
-    "Maven.health-tracker-rest [compile].executor": "Run",
-    "Maven.health-tracker-rest [org.apache.maven.plugins:maven-deploy-plugin:3.1.2:deploy-file].executor": "Run",
-    "Maven.health-tracker-rest [org.apache.maven.plugins:maven-deploy-plugin:3.1.2:deploy].executor": "Run",
-    "Maven.health-tracker-rest [org.jetbrains.dokka:dokka-maven-plugin:1.7.20:dokka].executor": "Run",
-    "Maven.health-tracker-rest [validate].executor": "Run",
-    "OpenAPI/Swagger Code Generator.health-tracker-rest.yaml.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/LENOVO/Desktop/Israr Ahmed Agile Final Report/Coverage report",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.ActivityDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddUserTest.addUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in HealthTrackerBackend.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExerciseLogDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExercisePerformanceDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExercisePerformanceTrackingDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExerciseScheduleDAOTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExerciseScheduleDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthGoalDAOTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthGoalDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthGoalLogAndPerformanceDAOTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthGoalLogAndPerformanceDAOTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.HealthTrackerControllerTest$CreateActivities.add an activity when a user exists for it, returns a 201 response.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTest$CreateUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTest$DeleteActivities.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTest$DeleteUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTest$ReadActivities.get all activities by user id when user and activities exists returns 200 response.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTest$ReadActivities.get all activities from the database returns 200 or 404 response.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTest$UpdateActivities.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTest$UpdateUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTest.get all users from the database returns 200 or 404 response.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTestMockDB.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HealthTrackerControllerTestMockDB.getting a user by id when id exists, returns a 200 response.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MentalHealthGoalDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MentalHealthTrackerControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ScreenTimeGoalDAOTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ScreenTimeGoalDAOTest.executor&quot;: &quot;Profiler#1&quot;,
+    &quot;JUnit.ScreenTimeGoalLogAndPerformanceDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ScreenTimeTrackerControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.SleepGoalDAOTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.SleepLogAndStatDAO.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SleepTrackerControllerTest$DeleteSleepLogBySleepGoalId.delete a sleep log by valid sleep goal id, returns 204 response.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SleepTrackerControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WalkGoalDAOTest$ReadWalkGoals.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WalkGoalDAOTest$ReadWalkGoals.get all goals from populated table.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WalkGoalDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WalkGoalLogAndStatsDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WalkTrackerControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WaterTrackerControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.controllers in HealthTrackerBackend.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.mentalhealth in HealthTrackerBackend.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.repository in HealthTrackerBackend.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.walk in HealthTrackerBackend.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.water in HealthTrackerBackend.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.AppKt (1).executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.AppKt.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.health-tracker-rest [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.health-tracker-rest [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.health-tracker-rest [org.apache.maven.plugins:maven-deploy-plugin:3.1.2:deploy-file].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.health-tracker-rest [org.apache.maven.plugins:maven-deploy-plugin:3.1.2:deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.health-tracker-rest [org.jetbrains.dokka:dokka-maven-plugin:1.7.20:dokka].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.health-tracker-rest [validate].executor&quot;: &quot;Run&quot;,
+    &quot;OpenAPI/Swagger Code Generator.health-tracker-rest.yaml.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/LENOVO/Desktop/Israr Ahmed Agile Final Report/Coverage report&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Options API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Options API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\LENOVO\Desktop\Assignment 1 Agile Development\HealthTrackerBackend\src\test\kotlin\ie\setu\repository\water" />
@@ -190,22 +194,7 @@
       <recent name="ie.setu.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.repository in HealthTrackerBackend">
-    <configuration name="MentalHealthTrackerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HealthTrackerBackend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ie.setu.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ie.setu.controllers" />
-      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.MentalHealthTrackerControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Kotlin.AppKt">
     <configuration name="SleepTrackerControllerTest$DeleteSleepLogBySleepGoalId.delete a sleep log by valid sleep goal id, returns 204 response" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HealthTrackerBackend" />
       <extension name="coverage">
@@ -253,13 +242,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ie.setu.AppKt" />
+      <module name="HealthTrackerBackend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.AppKt" />
         <item itemvalue="JUnit.repository in HealthTrackerBackend" />
         <item itemvalue="JUnit.controllers in HealthTrackerBackend" />
         <item itemvalue="JUnit.SleepTrackerControllerTest$DeleteSleepLogBySleepGoalId.delete a sleep log by valid sleep goal id, returns 204 response" />
         <item itemvalue="JUnit.SleepTrackerControllerTest" />
-        <item itemvalue="JUnit.MentalHealthTrackerControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -311,7 +307,8 @@
       <workItem from="1734957343164" duration="503000" />
       <workItem from="1734963284587" duration="11000" />
       <workItem from="1735043360301" duration="1687000" />
-      <workItem from="1735324407243" duration="715000" />
+      <workItem from="1735324407243" duration="1469000" />
+      <workItem from="1735370005155" duration="3459000" />
     </task>
     <task id="LOCAL-00001" summary="Add endpoints, get one by email, delete one, update one">
       <option name="closed" value="true" />

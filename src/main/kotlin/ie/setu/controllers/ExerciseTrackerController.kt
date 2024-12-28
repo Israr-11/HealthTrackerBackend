@@ -7,6 +7,7 @@ import ie.setu.domain.repository.exercise.ExercisePerformanceTrackingDAO
 import ie.setu.domain.repository.exercise.ExerciseScheduleDAO
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import org.joda.time.DateTime
 
 
 object ExerciseTrackerController {
@@ -48,7 +49,8 @@ object ExerciseTrackerController {
                     "id" to exercise_schedule.id,
                     "userId" to exercise_schedule.userId,
                     "exerciseType" to exercise_schedule.exerciseType,
-                    "status" to exercise_schedule.duration
+                    "status" to exercise_schedule.duration,
+                    "entryTime" to DateTime.now()
                 )
             )
             ctx.status(201)

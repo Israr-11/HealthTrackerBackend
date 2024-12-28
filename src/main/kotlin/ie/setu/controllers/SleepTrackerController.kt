@@ -7,6 +7,7 @@ import ie.setu.domain.repository.sleep.SleepGoalDAO
 import ie.setu.domain.repository.sleep.SleepGoalLogAndStatsDAO
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import org.joda.time.DateTime
 
 
 object SleepTrackerController {
@@ -48,8 +49,9 @@ object SleepTrackerController {
                     "userId" to sleep_goal.userId,
                     "targetSleepHours" to sleep_goal.targetSleepHours,
                     "targetSleepQuality" to sleep_goal.targetSleepQuality,
-                    "targetSleepTiming" to sleep_goal.targetSleepTiming
-                    )
+                    "targetSleepTiming" to sleep_goal.targetSleepTiming,
+                    "entryTime" to DateTime.now()
+                )
             )
             ctx.status(201)
         }

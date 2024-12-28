@@ -6,6 +6,7 @@ import ie.setu.domain.repository.mentalhealth.MentalHealthLogAndPerformanceDAO
 import ie.setu.domain.mentalhealth.MentalHealthLogAndPerformance
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import org.joda.time.DateTime
 
 object MentalHealthTrackerController {
     private val mentalHealthGoalDAO = MentalHealthGoalDAO()
@@ -45,6 +46,7 @@ object MentalHealthTrackerController {
                     "id" to mental_health_goal.id,
                     "userId" to mental_health_goal.userId,
                     "targetMoodScore" to mental_health_goal.targetMoodScore,
+                    "entryTime" to DateTime.now()
                 )
             )
             ctx.status(201)

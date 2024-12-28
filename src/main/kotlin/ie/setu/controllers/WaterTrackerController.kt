@@ -6,6 +6,7 @@ import ie.setu.domain.repository.water.WaterGoalLogAndStatsDAO
 import ie.setu.domain.water.WaterLogAndStat
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import org.joda.time.DateTime
 
 object WaterTrackerController {
     private val waterGoalDAO = WaterGoalDAO()
@@ -45,6 +46,7 @@ object WaterTrackerController {
                     "id" to water_goal.id,
                     "userId" to water_goal.userId,
                     "waterTarget" to water_goal.waterTarget,
+                    "entryTime" to DateTime.now()
                 )
             )
             ctx.status(201)

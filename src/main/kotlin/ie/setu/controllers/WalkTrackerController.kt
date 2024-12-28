@@ -6,6 +6,7 @@ import ie.setu.domain.repository.walk.WalkGoalLogAndStatsDAO
 import ie.setu.domain.walk.WalkLogAndStat
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import org.joda.time.DateTime
 
 object WalkTrackerController {
     private val walkGoalDAO = WalkGoalDAO()
@@ -45,7 +46,8 @@ object WalkTrackerController {
                     "id" to walkGoal.id,
                     "userId" to walkGoal.userId,
                     "targetSteps" to walkGoal.targetSteps,
-                    "uphill" to walkGoal.uphill
+                    "uphill" to walkGoal.uphill,
+                    "entryTime" to DateTime.now()
                 )
             )
             ctx.status(201)

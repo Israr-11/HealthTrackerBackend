@@ -6,6 +6,7 @@ import ie.setu.domain.repository.health.HealthGoalDAO
 import ie.setu.domain.repository.health.HealthGoalLogAndPerformanceDAO
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import org.joda.time.DateTime
 
 object HealthTrackerController {
     private val healthGoalDAO = HealthGoalDAO()
@@ -45,6 +46,7 @@ object HealthTrackerController {
                     "userId" to health_goal.userId,
                     "healthGoalType" to health_goal.healthGoalType,
                     "targetValue" to health_goal.targetValue,
+                    "entryTime" to DateTime.now()
                 )
             )
             ctx.status(201)

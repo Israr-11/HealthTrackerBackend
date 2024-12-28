@@ -6,6 +6,7 @@ import ie.setu.domain.repository.diet.DietGoalDAO
 import ie.setu.domain.repository.diet.DietGoalLogAndPerformanceDAO
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import org.joda.time.DateTime
 
 
 object DietTrackerController {
@@ -47,6 +48,7 @@ object DietTrackerController {
                     "userId" to diet_goal.userId,
                     "dietGoalType " to diet_goal.dietGoalType,
                     "targetCalories " to diet_goal.targetCalories,
+                    "entryTime" to DateTime.now()
                 )
             )
             ctx.status(201)
@@ -77,7 +79,8 @@ object DietTrackerController {
                     "id" to diet_log_and_performance.id,
                     "userId" to diet_log_and_performance.userId,
                     "dietGoalId" to diet_log_and_performance.dietGoalId,
-                    "caloriesConsumed" to diet_log_and_performance.caloriesConsumed
+                    "caloriesConsumed" to diet_log_and_performance.caloriesConsumed,
+                    "entryTime" to DateTime.now()
                 )
             )
             ctx.status(201)

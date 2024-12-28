@@ -6,6 +6,7 @@ import ie.setu.domain.repository.screentime.ScreenTimeLogAndPerformanceDAO
 import ie.setu.domain.screentime.ScreenTimeLogAndPerformance
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import org.joda.time.DateTime
 
 object ScreenTimeTrackerController {
     private val screenTimeGoalDAO = ScreenTimeGoalDAO()
@@ -45,6 +46,7 @@ object ScreenTimeTrackerController {
                     "id" to screen_time_goal.id,
                     "userId" to screen_time_goal.userId,
                     "targetScreenHours" to screen_time_goal.targetScreenHours,
+                    "entryTime" to DateTime.now()
                 )
             )
             ctx.status(201)
