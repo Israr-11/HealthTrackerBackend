@@ -49,7 +49,7 @@ object ExerciseTrackerController {
                     "id" to exercise_schedule.id,
                     "userId" to exercise_schedule.userId,
                     "exerciseType" to exercise_schedule.exerciseType,
-                    "status" to exercise_schedule.duration,
+                    "duration" to exercise_schedule.duration,
                     "entryTime" to DateTime.now()
                 )
             )
